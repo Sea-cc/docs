@@ -5,7 +5,7 @@ import sidebar from './sidebar';
 export default hopeTheme({
 	hostname: 'https://kiyan-a.github.io/sev/',
 	themeColor: {
-		blue: '#2684ff',
+		green: '#67c23a',
 		red: '#f26d6d',
 		red_: '#dd1370',
 		yellow: '#e3eca8',

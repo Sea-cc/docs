@@ -10,7 +10,6 @@ export default defineUserConfig({
 	description: '记录成长,相信过程 🗺️',
 
 	base: '/',
-
 	theme,
 	plugins: [[vuepressPluginDemoblockPlus]],
 });
