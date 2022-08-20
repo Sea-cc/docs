@@ -1,0 +1,74 @@
+{
+  "hash": "4aef6e15",
+  "browserHash": "9e1d5781",
+  "optimized": {
+    "@vue/devtools-api": {
+      "src": "../../../node_modules/@vue/devtools-api/lib/esm/index.js",
+      "file": "@vue_devtools-api.js",
+      "fileHash": "b1577863",
+      "needsInterop": false
+    },
+    "@vuepress/shared": {
+      "src": "../../../node_modules/@vuepress/shared/dist/index.js",
+      "file": "@vuepress_shared.js",
+      "fileHash": "c9fc7d39",
+      "needsInterop": false
+    },
+    "vue": {
+      "src": "../../../node_modules/vue/dist/vue.runtime.esm-bundler.js",
+      "file": "vue.js",
+      "fileHash": "1305827e",
+      "needsInterop": false
+    },
+    "vue-router": {
+      "src": "../../../node_modules/vue-router/dist/vue-router.esm-bundler.js",
+      "file": "vue-router.js",
+      "fileHash": "28744a2a",
+      "needsInterop": false
+    },
+    "chart.js/auto": {
+      "src": "../../../node_modules/chart.js/auto/auto.esm.js",
+      "file": "chart_js_auto.js",
+      "fileHash": "3f65099a",
+      "needsInterop": false
+    },
+    "echarts": {
+      "src": "../../../node_modules/echarts/index.js",
+      "file": "echarts.js",
+      "fileHash": "a9df5dda",
+      "needsInterop": false
+    },
+    "flowchart.js": {
+      "src": "../../../node_modules/flowchart.js/index.js",
+      "file": "flowchart_js.js",
+      "fileHash": "f5c336b3",
+      "needsInterop": true
+    },
+    "mermaid": {
+      "src": "../../../node_modules/mermaid/dist/mermaid.esm.min.mjs",
+      "file": "mermaid.js",
+      "fileHash": "17bc417a",
+      "needsInterop": false
+    },
+    "@vueuse/core": {
+      "src": "../../../node_modules/@vueuse/core/index.mjs",
+      "file": "@vueuse_core.js",
+      "fileHash": "d0040952",
+      "needsInterop": false
+    }
+  },
+  "chunks": {
+    "chunk-BXUUIO7M": {
+      "file": "chunk-BXUUIO7M.js"
+    },
+    "chunk-4DQLPGLT": {
+      "file": "chunk-4DQLPGLT.js"
+    },
+    "chunk-S7BHBUHO": {
+      "file": "chunk-S7BHBUHO.js"
+    },
+    "chunk-EU5MGN5N": {
+      "file": "chunk-EU5MGN5N.js"
+    }
+  }
+}
