@@ -1,9 +1,9 @@
-import { useStyleTag } from "D:/Material/项目源码/web-docs/node_modules/vuepress-plugin-components/lib/client/composables";
+import { useStyleTag } from "D:/Material/项目源码/docs/node_modules/vuepress-plugin-components/lib/client/composables";
 import { h } from "vue";
 import { defineClientConfig } from "@vuepress/client";
-import Badge from "D:/Material/项目源码/web-docs/node_modules/vuepress-plugin-components/lib/client/components/Badge";
-import FontIcon from "D:/Material/项目源码/web-docs/node_modules/vuepress-plugin-components/lib/client/components/FontIcon";
-import BackToTop from "D:/Material/项目源码/web-docs/node_modules/vuepress-plugin-components/lib/client/components/BackToTop";
+import Badge from "D:/Material/项目源码/docs/node_modules/vuepress-plugin-components/lib/client/components/Badge";
+import FontIcon from "D:/Material/项目源码/docs/node_modules/vuepress-plugin-components/lib/client/components/FontIcon";
+import BackToTop from "D:/Material/项目源码/docs/node_modules/vuepress-plugin-components/lib/client/components/BackToTop";
 
 
 export default defineClientConfig({

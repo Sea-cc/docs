@@ -3,9 +3,9 @@ title: Markdown 展示
 icon: markdown
 order: 2
 category:
-  - 使用指南
+    - 使用指南
 tag:
-  - Markdown
+    - Markdown
 ---
 
 VuePress 主要从 Markdown 文件生成页面。因此，你可以使用它轻松生成文档或博客站点。
@@ -51,32 +51,32 @@ VuePress 会使用 [markdown-it](https://github.com/markdown-it/markdown-it) 来
 @tab TS
 
 ```ts
-import { hopeTheme } from "vuepress-theme-hope";
+import { hopeTheme } from 'vuepress-theme-hope';
 
 export default {
-  theme: hopeTheme({
-    plugins: {
-      mdEnhance: {
-        enableAll: true,
-      },
-    },
-  }),
+	theme: hopeTheme({
+		plugins: {
+			mdEnhance: {
+				enableAll: true,
+			},
+		},
+	}),
 };
 ```
 
 @tab JS
 
 ```js
-const { hopeTheme } = require("vuepress-theme-hope");
+const { hopeTheme } = require('vuepress-theme-hope');
 
 module.exports = {
-  theme: hopeTheme({
-    plugins: {
-      mdEnhance: {
-        enableAll: true,
-      },
-    },
-  }),
+	theme: hopeTheme({
+		plugins: {
+			mdEnhance: {
+				enableAll: true,
+			},
+		},
+	}),
 };
 ```
 
@@ -168,7 +168,7 @@ const a = 1;
 
 ::::
 
-- [查看详情](https://vuepress-theme-hope.github.io/v2/zh/guide/markdown/container.html)
+-   [查看详情](https://vuepress-theme-hope.github.io/v2/zh/docs/markdown/container.html)
 
 #### 代码块
 
@@ -194,7 +194,7 @@ npm i -D vuepress-theme-hope
 
 :::
 
-- [查看详情](https://vuepress-theme-hope.github.io/v2/zh/guide/markdown/code-tabs.html)
+-   [查看详情](https://vuepress-theme-hope.github.io/v2/zh/docs/markdown/code-tabs.html)
 
 #### 自定义对齐
 
@@ -210,13 +210,13 @@ npm i -D vuepress-theme-hope
 
 :::
 
-- [查看详情](https://vuepress-theme-hope.github.io/v2/zh/guide/markdown/align.html)
+-   [查看详情](https://vuepress-theme-hope.github.io/v2/zh/docs/markdown/align.html)
 
 #### 上下角标
 
 19^th^ H~2~O
 
-- [查看详情](https://vuepress-theme-hope.github.io/v2/zh/guide/markdown/sup-sub.html)
+-   [查看详情](https://vuepress-theme-hope.github.io/v2/zh/docs/markdown/sup-sub.html)
 
 #### 脚注
 
@@ -224,26 +224,26 @@ npm i -D vuepress-theme-hope
 
 [^first]: 这是脚注内容
 
-- [查看详情](https://vuepress-theme-hope.github.io/v2/zh/guide/markdown/footnote.html)
+-   [查看详情](https://vuepress-theme-hope.github.io/v2/zh/docs/markdown/footnote.html)
 
 #### 标记
 
 你可以标记 ==重要的内容== 。
 
-- [查看详情](https://vuepress-theme-hope.github.io/v2/zh/guide/markdown/mark.html)
+-   [查看详情](https://vuepress-theme-hope.github.io/v2/zh/docs/markdown/mark.html)
 
 #### 任务列表
 
-- [x] 计划 1
-- [ ] 计划 2
+-   [x] 计划 1
+-   [ ] 计划 2
 
-- [查看详情](https://vuepress-theme-hope.github.io/v2/zh/guide/markdown/tasklist.html)
+-   [查看详情](https://vuepress-theme-hope.github.io/v2/zh/docs/markdown/tasklist.html)
 
 ### 图片增强
 
 支持为图片设置颜色模式和大小
 
-- [查看详情](https://vuepress-theme-hope.github.io/v2/zh/guide/markdown/image.html)
+-   [查看详情](https://vuepress-theme-hope.github.io/v2/zh/docs/markdown/image.html)
 
 #### 图表
 
@@ -251,35 +251,35 @@ npm i -D vuepress-theme-hope
 
 ```json
 {
-  "type": "scatter",
-  "data": {
-    "datasets": [
-      {
-        "label": "散点数据集",
-        "data": [
-          { "x": -10, "y": 0 },
-          { "x": 0, "y": 10 },
-          { "x": 10, "y": 5 },
-          { "x": 0.5, "y": 5.5 }
-        ],
-        "backgroundColor": "rgb(255, 99, 132)"
-      }
-    ]
-  },
-  "options": {
-    "scales": {
-      "x": {
-        "type": "linear",
-        "position": "bottom"
-      }
-    }
-  }
+	"type": "scatter",
+	"data": {
+		"datasets": [
+			{
+				"label": "散点数据集",
+				"data": [
+					{ "x": -10, "y": 0 },
+					{ "x": 0, "y": 10 },
+					{ "x": 10, "y": 5 },
+					{ "x": 0.5, "y": 5.5 }
+				],
+				"backgroundColor": "rgb(255, 99, 132)"
+			}
+		]
+	},
+	"options": {
+		"scales": {
+			"x": {
+				"type": "linear",
+				"position": "bottom"
+			}
+		}
+	}
 }
 ```
 
 :::
 
-- [查看详情](https://vuepress-theme-hope.github.io/v2/zh/guide/markdown/chart.html)
+-   [查看详情](https://vuepress-theme-hope.github.io/v2/zh/docs/markdown/chart.html)
 
 #### Echarts
 
@@ -287,25 +287,25 @@ npm i -D vuepress-theme-hope
 
 ```json
 {
-  "xAxis": {
-    "type": "category",
-    "data": ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]
-  },
-  "yAxis": {
-    "type": "value"
-  },
-  "series": [
-    {
-      "data": [150, 230, 224, 218, 135, 147, 260],
-      "type": "line"
-    }
-  ]
+	"xAxis": {
+		"type": "category",
+		"data": ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]
+	},
+	"yAxis": {
+		"type": "value"
+	},
+	"series": [
+		{
+			"data": [150, 230, 224, 218, 135, 147, 260],
+			"type": "line"
+		}
+	]
 }
 ```
 
 :::
 
-- [查看详情](https://vuepress-theme-hope.github.io/v2/zh/guide/markdown/echarts.html)
+-   [查看详情](https://vuepress-theme-hope.github.io/v2/zh/docs/markdown/echarts.html)
 
 #### 流程图
 
@@ -318,7 +318,7 @@ cond(yes)->process->e
 cond(no)->e
 ```
 
-- [查看详情](https://vuepress-theme-hope.github.io/v2/zh/guide/markdown/flowchart.html)
+-   [查看详情](https://vuepress-theme-hope.github.io/v2/zh/docs/markdown/flowchart.html)
 
 #### Mermaid
 
@@ -339,7 +339,7 @@ flowchart TB
     two --> c2
 ```
 
-- [查看详情](https://vuepress-theme-hope.github.io/v2/zh/guide/markdown/mermaid.html)
+-   [查看详情](https://vuepress-theme-hope.github.io/v2/zh/docs/markdown/mermaid.html)
 
 #### Tex 语法
 
@@ -348,13 +348,13 @@ $$
 = \left(\frac {y^{\omega}} {\omega}\right) \left\{(\log y)^r + \sum_{i=1}^r \frac {(-1)^i r \cdots (r-i+1) (\log y)^{r-i}} {\omega^i} \right\}
 $$
 
-- [查看详情](https://vuepress-theme-hope.github.io/v2/zh/guide/markdown/tex.html)
+-   [查看详情](https://vuepress-theme-hope.github.io/v2/zh/docs/markdown/tex.html)
 
 #### 导入文件
 
 @include(./README.md{11-17})
 
-- [查看详情](https://vuepress-theme-hope.github.io/v2/zh/guide/markdown/include.html)
+-   [查看详情](https://vuepress-theme-hope.github.io/v2/zh/docs/markdown/include.html)
 
 #### 代码演示
 
@@ -366,20 +366,20 @@ $$
 ```
 
 ```js
-document.querySelector("#very").addEventListener("click", () => {
-  alert("非常强大");
+document.querySelector('#very').addEventListener('click', () => {
+	alert('非常强大');
 });
 ```
 
 ```css
 span {
-  color: red;
+	color: red;
 }
 ```
 
 :::
 
-- [查看详情](https://vuepress-theme-hope.github.io/v2/zh/guide/markdown/demo.html)
+-   [查看详情](https://vuepress-theme-hope.github.io/v2/zh/docs/markdown/demo.html)
 
 #### 样式化
 
@@ -387,7 +387,7 @@ span {
 
 设置它<span style="color:red">没有</span>任何效果，请<span style="color:red">不要</span>这样使用
 
-- [查看详情](https://vuepress-theme-hope.github.io/v2/zh/guide/markdown/stylize.html)
+-   [查看详情](https://vuepress-theme-hope.github.io/v2/zh/docs/markdown/stylize.html)
 
 <!-- markdownlint-enable MD033 -->
 
@@ -403,8 +403,8 @@ span {
 
 ## 幻灯片 2
 
-- 项目 1
-- 项目 2
+-   项目 1
+-   项目 2
 
 ---
 
@@ -424,6 +424,6 @@ $$
 
 @slideend
 
-- [查看详情](https://vuepress-theme-hope.github.io/v2/zh/guide/markdown/presentation.html)
+-   [查看详情](https://vuepress-theme-hope.github.io/v2/zh/docs/markdown/presentation.html)
 
 [md-enhance]: https://vuepress-theme-hope.github.io/v2/md-enhance/zh/
