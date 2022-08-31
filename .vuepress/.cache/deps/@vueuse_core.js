@@ -1,5 +1,5 @@
 import {
-  computed,
+  computed2 as computed,
   customRef,
   effectScope,
   getCurrentInstance,
@@ -25,8 +25,8 @@ import {
   unref,
   watch,
   watchEffect
-} from "./chunk-4DQLPGLT.js";
-import "./chunk-S7BHBUHO.js";
+} from "./chunk-TDPAL32L.js";
+import "./chunk-LME7LTBK.js";
 import {
   init_define_BACK_TO_TOP_LOCALES,
   init_define_CODE_COPY_LOCALES,
@@ -39,7 +39,7 @@ import {
   init_define_PHOTO_SWIPE_OPTIONS,
   init_define_READING_TIME_LOCALES,
   init_define_REVEAL_CONFIG
-} from "./chunk-EU5MGN5N.js";
+} from "./chunk-NYAVCWIS.js";
 
 // dep:@vueuse_core
 init_define_BACK_TO_TOP_LOCALES();

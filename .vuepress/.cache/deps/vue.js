@@ -17,7 +17,7 @@ import {
   cloneVNode,
   compatUtils,
   compile,
-  computed,
+  computed2 as computed,
   createApp,
   createBaseVNode,
   createBlock,
@@ -137,7 +137,7 @@ import {
   withMemo,
   withModifiers,
   withScopeId
-} from "./chunk-4DQLPGLT.js";
+} from "./chunk-TDPAL32L.js";
 import {
   camelize,
   capitalize,
@@ -146,7 +146,7 @@ import {
   normalizeStyle,
   toDisplayString,
   toHandlerKey
-} from "./chunk-S7BHBUHO.js";
+} from "./chunk-LME7LTBK.js";
 import {
   init_define_BACK_TO_TOP_LOCALES,
   init_define_CODE_COPY_LOCALES,
@@ -159,7 +159,7 @@ import {
   init_define_PHOTO_SWIPE_OPTIONS,
   init_define_READING_TIME_LOCALES,
   init_define_REVEAL_CONFIG
-} from "./chunk-EU5MGN5N.js";
+} from "./chunk-NYAVCWIS.js";
 
 // dep:vue
 init_define_BACK_TO_TOP_LOCALES();

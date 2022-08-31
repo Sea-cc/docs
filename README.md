@@ -6,7 +6,7 @@ heroText: Kiyan-a
 tagline: 记录成长,相信过程...
 actions:
     - text: 使用指南
-      link: /docs/
+      link: /docs/about
       type: primary
 
     - text: 仓库主页

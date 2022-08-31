@@ -4,7 +4,13 @@
 	box-sizing: border-box;
 }
 #app {
-	width: 100vw;
+	width: 100%;
+}
+:root {
+	--content-width: 96%;
+}
+.page-title {
+	margin-bottom: 16px;
 }
 #main-title {
 	font-weight: 600;

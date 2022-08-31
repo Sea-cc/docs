@@ -2,7 +2,7 @@ import {
   isPerformanceSupported,
   now,
   setupDevtoolsPlugin
-} from "./chunk-BXUUIO7M.js";
+} from "./chunk-HAUKDLCC.js";
 import {
   init_define_BACK_TO_TOP_LOCALES,
   init_define_CODE_COPY_LOCALES,
@@ -15,7 +15,7 @@ import {
   init_define_PHOTO_SWIPE_OPTIONS,
   init_define_READING_TIME_LOCALES,
   init_define_REVEAL_CONFIG
-} from "./chunk-EU5MGN5N.js";
+} from "./chunk-NYAVCWIS.js";
 
 // dep:@vue_devtools-api
 init_define_BACK_TO_TOP_LOCALES();

@@ -9,6 +9,7 @@ import clientConfig7 from 'D:/Material/项目源码/docs/.vuepress/.temp/md-enha
 import clientConfig8 from 'D:/Material/项目源码/docs/node_modules/vuepress-plugin-photo-swipe/lib/client/config.js'
 import clientConfig9 from 'D:/Material/项目源码/docs/.vuepress/.temp/theme-hope/config.js'
 import clientConfig10 from 'D:/Material/项目源码/docs/node_modules/vuepress-plugin-demoblock-plus/client/client.js'
+import clientConfig11 from 'D:/Material/项目源码/docs/.vuepress/client.js'
 
 export const clientConfigs = [
   clientConfig0,
@@ -22,4 +23,5 @@ export const clientConfigs = [
   clientConfig8,
   clientConfig9,
   clientConfig10,
+  clientConfig11,
 ]

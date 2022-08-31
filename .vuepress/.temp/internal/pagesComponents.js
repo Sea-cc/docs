@@ -9,6 +9,8 @@ export const pagesComponents = {
   "v-334c9704": defineAsyncComponent(() => import(/* webpackChunkName: "v-334c9704" */"D:/Material/项目源码/docs/.vuepress/.temp/pages/components/article1.html.vue")),
   // path: /components/article2.html
   "v-2fe2e5c6": defineAsyncComponent(() => import(/* webpackChunkName: "v-2fe2e5c6" */"D:/Material/项目源码/docs/.vuepress/.temp/pages/components/article2.html.vue")),
+  // path: /docs/about.html
+  "v-3b1675a7": defineAsyncComponent(() => import(/* webpackChunkName: "v-3b1675a7" */"D:/Material/项目源码/docs/.vuepress/.temp/pages/docs/about.html.vue")),
   // path: /docs/accuracyProblem.html
   "v-32ee03ae": defineAsyncComponent(() => import(/* webpackChunkName: "v-32ee03ae" */"D:/Material/项目源码/docs/.vuepress/.temp/pages/docs/accuracyProblem.html.vue")),
   // path: /docs/dev.html
@@ -19,6 +21,8 @@ export const pagesComponents = {
   "v-365d88e8": defineAsyncComponent(() => import(/* webpackChunkName: "v-365d88e8" */"D:/Material/项目源码/docs/.vuepress/.temp/pages/docs/ES6.html.vue")),
   // path: /docs/markdown.html
   "v-c6d4a9a2": defineAsyncComponent(() => import(/* webpackChunkName: "v-c6d4a9a2" */"D:/Material/项目源码/docs/.vuepress/.temp/pages/docs/markdown.html.vue")),
+  // path: /log/
+  "v-744993e4": defineAsyncComponent(() => import(/* webpackChunkName: "v-744993e4" */"D:/Material/项目源码/docs/.vuepress/.temp/pages/log/index.html.vue")),
   // path: /secret/disable.html
   "v-0a064057": defineAsyncComponent(() => import(/* webpackChunkName: "v-0a064057" */"D:/Material/项目源码/docs/.vuepress/.temp/pages/secret/disable.html.vue")),
   // path: /secret/encrypt.html

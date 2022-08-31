@@ -7,6 +7,8 @@ export const pagesData = {
   "v-334c9704": () => import(/* webpackChunkName: "v-334c9704" */"D:/Material/项目源码/docs/.vuepress/.temp/pages/components/article1.html.js").then(({ data }) => data),
   // path: /components/article2.html
   "v-2fe2e5c6": () => import(/* webpackChunkName: "v-2fe2e5c6" */"D:/Material/项目源码/docs/.vuepress/.temp/pages/components/article2.html.js").then(({ data }) => data),
+  // path: /docs/about.html
+  "v-3b1675a7": () => import(/* webpackChunkName: "v-3b1675a7" */"D:/Material/项目源码/docs/.vuepress/.temp/pages/docs/about.html.js").then(({ data }) => data),
   // path: /docs/accuracyProblem.html
   "v-32ee03ae": () => import(/* webpackChunkName: "v-32ee03ae" */"D:/Material/项目源码/docs/.vuepress/.temp/pages/docs/accuracyProblem.html.js").then(({ data }) => data),
   // path: /docs/dev.html
@@ -17,6 +19,8 @@ export const pagesData = {
   "v-365d88e8": () => import(/* webpackChunkName: "v-365d88e8" */"D:/Material/项目源码/docs/.vuepress/.temp/pages/docs/ES6.html.js").then(({ data }) => data),
   // path: /docs/markdown.html
   "v-c6d4a9a2": () => import(/* webpackChunkName: "v-c6d4a9a2" */"D:/Material/项目源码/docs/.vuepress/.temp/pages/docs/markdown.html.js").then(({ data }) => data),
+  // path: /log/
+  "v-744993e4": () => import(/* webpackChunkName: "v-744993e4" */"D:/Material/项目源码/docs/.vuepress/.temp/pages/log/index.html.js").then(({ data }) => data),
   // path: /secret/disable.html
   "v-0a064057": () => import(/* webpackChunkName: "v-0a064057" */"D:/Material/项目源码/docs/.vuepress/.temp/pages/secret/disable.html.js").then(({ data }) => data),
   // path: /secret/encrypt.html

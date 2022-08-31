@@ -12,7 +12,7 @@ import {
   init_define_PHOTO_SWIPE_OPTIONS,
   init_define_READING_TIME_LOCALES,
   init_define_REVEAL_CONFIG
-} from "./chunk-EU5MGN5N.js";
+} from "./chunk-NYAVCWIS.js";
 
 // dep:chart_js_auto
 init_define_BACK_TO_TOP_LOCALES();
