@@ -19,6 +19,14 @@ export const pagesData = {
   "v-365d88e8": () => import(/* webpackChunkName: "v-365d88e8" */"D:/Material/项目源码/docs/.vuepress/.temp/pages/docs/ES6.html.js").then(({ data }) => data),
   // path: /docs/markdown.html
   "v-c6d4a9a2": () => import(/* webpackChunkName: "v-c6d4a9a2" */"D:/Material/项目源码/docs/.vuepress/.temp/pages/docs/markdown.html.js").then(({ data }) => data),
+  // path: /docs/uni-app.html
+  "v-233f75e0": () => import(/* webpackChunkName: "v-233f75e0" */"D:/Material/项目源码/docs/.vuepress/.temp/pages/docs/uni-app.html.js").then(({ data }) => data),
+  // path: /docs/vue3.html
+  "v-c4244c1e": () => import(/* webpackChunkName: "v-c4244c1e" */"D:/Material/项目源码/docs/.vuepress/.temp/pages/docs/vue3.html.js").then(({ data }) => data),
+  // path: /docs/%E5%BC%80%E5%8F%91%E8%A7%84%E8%8C%83.html
+  "v-155d207e": () => import(/* webpackChunkName: "v-155d207e" */"D:/Material/项目源码/docs/.vuepress/.temp/pages/docs/开发规范.html.js").then(({ data }) => data),
+  // path: /docs/%E6%96%87%E4%BB%B6%E8%B5%84%E6%BA%90%E5%A4%84%E7%90%86.html
+  "v-2b03a47e": () => import(/* webpackChunkName: "v-2b03a47e" */"D:/Material/项目源码/docs/.vuepress/.temp/pages/docs/文件资源处理.html.js").then(({ data }) => data),
   // path: /log/
   "v-744993e4": () => import(/* webpackChunkName: "v-744993e4" */"D:/Material/项目源码/docs/.vuepress/.temp/pages/log/index.html.js").then(({ data }) => data),
   // path: /secret/disable.html

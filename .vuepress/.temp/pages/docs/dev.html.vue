@@ -1,4 +1,4 @@
-<template><div><h1 id="✍️-调试技巧" tabindex="-1"><a class="header-anchor" href="#✍️-调试技巧" aria-hidden="true">#</a> ✍️ 调试技巧</h1>
+<template><div><h1 id="📖-调试技巧" tabindex="-1"><a class="header-anchor" href="#📖-调试技巧" aria-hidden="true">#</a> 📖 调试技巧</h1>
 <p>除了在虚拟机中,我们怎么去测试 IE 的兼容性呢(目前我们的电脑已经是无法安装 IE 浏览器了),答案是<code v-pre>Edge</code>浏览器</p>
 <p><img src="https://raw.githubusercontent.com/Kiyan-a/image-store/img/202208202318529.png" alt="" loading="lazy"></p>
 <p><img src="https://raw.githubusercontent.com/Kiyan-a/image-store/img/202208202327007.png" alt="" loading="lazy"></p>

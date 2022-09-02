@@ -12,7 +12,7 @@ export default hopeTheme({
 		orange: '#fb9b5f',
 		orange_: '#ff897d',
 	} /* 主题色 */,
-	toc: false /* 根据需要可在页面配置 */,
+	toc: true /* 根据需要可在页面配置 */,
 	fullscreen: true /* 全屏 */,
 	copyright: false /* 页面页脚(不是主页) */,
 	editLink: false /* 是否底部显示编辑此页功能 */,
@@ -25,7 +25,7 @@ export default hopeTheme({
 		center: ['Search'],
 		right: ['Links', 'Language', 'Outlook', 'Repo'],
 	},
-	iconAssets: 'iconfont',
+	iconAssets: '//at.alicdn.com/t/c/font_3624762_dxgkw1v19.js',
 
 	logo: '/logo.svg',
 
@@ -38,6 +38,11 @@ export default hopeTheme({
 
 	/* 侧边栏 */
 	sidebar: sidebar,
+	// 配置侧边栏自动生成
+	// sidebar: {
+	// 	'/docs/': 'structure',
+	// 	'/components/': 'structure',
+	// },
 
 	// footer: '默认页脚',
 

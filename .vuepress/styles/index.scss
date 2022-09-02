@@ -9,6 +9,13 @@
 :root {
 	--content-width: 96%;
 }
+.icon {
+	width: 1.2em;
+	height: 1.3em;
+	vertical-align: -0.15em;
+	fill: currentColor;
+	overflow: hidden;
+}
 .page-title {
 	margin-bottom: 16px;
 }
@@ -40,4 +47,7 @@
 }
 .copy-code-button {
 	background-color: var(--theme-color);
+}
+.demo-block {
+	background-color: #f1f3f4;
 }

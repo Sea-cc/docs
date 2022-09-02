@@ -1,11 +1,11 @@
 ---
-icon: edit
+icon: icon-15
 date: 2022-01-02
 category:
-  - CategoryA
+    - CategoryA
 tag:
-  - tag A
-  - tag B
+    - tag A
+    - tag B
 star: true
 ---
 

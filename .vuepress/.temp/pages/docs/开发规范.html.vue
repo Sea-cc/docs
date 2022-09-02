@@ -1,0 +1,1399 @@
+<template><div><h1 id="🛠️-开发规范" tabindex="-1"><a class="header-anchor" href="#🛠️-开发规范" aria-hidden="true">#</a> 🛠️ 开发规范</h1>
+<h2 id="一、命名规范" tabindex="-1"><a class="header-anchor" href="#一、命名规范" aria-hidden="true">#</a> 一、命名规范</h2>
+<p>市面上常用的命名规范：</p>
+<ul>
+<li><code v-pre>camelCase</code>（小驼峰式命名法 —— 首字母小写）</li>
+<li><code v-pre>PascalCase</code>（大驼峰式命名法 —— 首字母大写）</li>
+<li><code v-pre>kebab-case</code>（短横线连接式）</li>
+<li><code v-pre>Snake</code>（下划线连接式）</li>
+</ul>
+<h3 id="_1-1-项目文件命名" tabindex="-1"><a class="header-anchor" href="#_1-1-项目文件命名" aria-hidden="true">#</a> 1.1 项目文件命名</h3>
+<h4 id="_1-1-1-项目名" tabindex="-1"><a class="header-anchor" href="#_1-1-1-项目名" aria-hidden="true">#</a> 1.1.1 项目名</h4>
+<p>全部采用小写方式， 以<strong>短横线</strong>分隔。例：<code v-pre>my-project-name</code>。</p>
+<h4 id="_1-1-2-目录名" tabindex="-1"><a class="header-anchor" href="#_1-1-2-目录名" aria-hidden="true">#</a> 1.1.2 目录名</h4>
+<p><strong>参照项目命名规则，有复数结构时，要采用复数命名法</strong>。例：docs、assets、components、directives、mixins、utils、views。</p>
+<div class="language-text ext-text line-numbers-mode"><pre v-pre class="shiki" style="background-color: var(--shiki-color-background)"><code><span class="line"><span style="color: var(--shiki-color-text)">my-project-name/</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">|- BuildScript    // 流水线部署文件目录</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">|- docs           // 项目的细化文档目录（可选）</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">|- nginx          // 部署在容器上前端项目 nginx 代理文件目录</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">|- node_modules   // 下载的依赖包</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">|- public         // 静态页面目录</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">    |- index.html // 项目入口</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">|- src            // 源码目录</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">    |- api        // http 请求目录</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">    |- assets     // 静态资源目录，这里的资源会被wabpack构建</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">        |- icon   // icon 存放目录</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">        |- img    // 图片存放目录</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">        |- js     // 公共 js 文件目录</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">        |- scss   // 公共样式 scss 存放目录</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">            |- frame.scss   // 入口文件</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">            |- global.scss  // 公共样式</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">            |- reset.scss   // 重置样式</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">    |- components     // 组件</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">    |- plugins        // 插件</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">    |- router         // 路由</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">    |- routes         // 详细的路由拆分目录（可选）</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">        |- index.js</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">    |- store          // 全局状态管理</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">    |- utils          // 工具存放目录</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">        |- request.js // 公共请求工具</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">    |- views          // 页面存放目录</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">    |- App.vue        // 根组件</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">    |- main.js        // 入口文件</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">    |- tests          // 测试用例</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">    |- .browserslistrc// 浏览器兼容配置文件</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">    |- .editorconfig  // 编辑器配置文件</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">    |- .eslintignore  // eslint 忽略规则</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">    |- .eslintrc.js   // eslint 规则</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">    |- .gitignore     // git 忽略规则</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">    |- babel.config.js // babel 规则</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">    |- Dockerfile // Docker 部署文件</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">    |- jest.config.js</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">    |- package-lock.json</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">    |- package.json // 依赖</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">    |- README.md // 项目 README</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">    |- vue.config.js // webpack 配置</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">复制代码</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)"></span></span></code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h4 id="_1-1-3-图像文件名" tabindex="-1"><a class="header-anchor" href="#_1-1-3-图像文件名" aria-hidden="true">#</a> 1.1.3 图像文件名</h4>
+<p>全部采用小写方式， 优先选择单个单词命名，多个单词命名以<strong>下划线</strong>分隔。</p>
+<div class="language-text ext-text line-numbers-mode"><pre v-pre class="shiki" style="background-color: var(--shiki-color-background)"><code><span class="line"><span style="color: var(--shiki-color-text)">banner_sina.gif</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">menu_aboutus.gif</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">menutitle_news.gif</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">logo_police.gif</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">logo_national.gif</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">pic_people.jpg</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">pic_TV.jpg</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">复制代码</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)"></span></span></code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h4 id="_1-1-4-html-文件名" tabindex="-1"><a class="header-anchor" href="#_1-1-4-html-文件名" aria-hidden="true">#</a> 1.1.4 HTML 文件名</h4>
+<p>全部采用小写方式， 优先选择单个单词命名，多个单词命名以<strong>下划线</strong>分隔。</p>
+<div class="language-text ext-text line-numbers-mode"><pre v-pre class="shiki" style="background-color: var(--shiki-color-background)"><code><span class="line"><span style="color: var(--shiki-color-text)">|- error_report.html</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">|- success_report.html</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">复制代码</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)"></span></span></code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h4 id="_1-1-5-css-文件名" tabindex="-1"><a class="header-anchor" href="#_1-1-5-css-文件名" aria-hidden="true">#</a> 1.1.5 CSS 文件名</h4>
+<p>全部采用小写方式， 优先选择单个单词命名，多个单词命名以<strong>短横线</strong>分隔。</p>
+<div class="language-text ext-text line-numbers-mode"><pre v-pre class="shiki" style="background-color: var(--shiki-color-background)"><code><span class="line"><span style="color: var(--shiki-color-text)">|- normalize.less</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">|- base.less</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">|- date-picker.scss</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">|- input-number.scss</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">复制代码</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)"></span></span></code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h4 id="_1-1-6-javascript-文件名" tabindex="-1"><a class="header-anchor" href="#_1-1-6-javascript-文件名" aria-hidden="true">#</a> 1.1.6 JavaScript 文件名</h4>
+<p>全部采用小写方式， 优先选择单个单词命名，多个单词命名以<strong>短横线</strong>分隔。</p>
+<div class="language-text ext-text line-numbers-mode"><pre v-pre class="shiki" style="background-color: var(--shiki-color-background)"><code><span class="line"><span style="color: var(--shiki-color-text)">|- index.js</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">|- plugin.js</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">|- util.js</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">|- date-util.js</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">|- account-model.js</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">|- collapse-transition.js</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">复制代码</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)"></span></span></code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><blockquote>
+<p>上述规则可以快速记忆为“静态文件下划线，编译文件短横线”。</p>
+</blockquote>
+<h3 id="_1-2-vue-组件命名" tabindex="-1"><a class="header-anchor" href="#_1-2-vue-组件命名" aria-hidden="true">#</a> 1.2 Vue 组件命名</h3>
+<h4 id="_1-2-1-单文件组件名" tabindex="-1"><a class="header-anchor" href="#_1-2-1-单文件组件名" aria-hidden="true">#</a> 1.2.1 单文件组件名</h4>
+<p>文件扩展名为 <code v-pre>.vue</code> 的 <code v-pre>single-file components</code> (单文件组件)。单文件组件名应该始终是<strong>单词大写开头</strong> (PascalCase)。</p>
+<div class="language-text ext-text line-numbers-mode"><pre v-pre class="shiki" style="background-color: var(--shiki-color-background)"><code><span class="line"><span style="color: var(--shiki-color-text)">components/</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">|- MyComponent.vue</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">复制代码</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)"></span></span></code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h4 id="_1-2-2-单例组件名" tabindex="-1"><a class="header-anchor" href="#_1-2-2-单例组件名" aria-hidden="true">#</a> 1.2.2 单例组件名</h4>
+<p><strong>只拥有单个活跃实例的组件应该以 <code v-pre>The</code> 前缀命名，以示其唯一性。</strong></p>
+<p>这不意味着组件只可用于一个单页面，而是<em>每个页面</em>只使用一次。这些组件永远不接受任何 prop，因为它们是为你的应用定制的。如果你发现有必要添加 prop，那就表明这实际上是一个可复用的组件，<em>只是目前</em>在每个页面里只使用一次。</p>
+<p>比如，头部和侧边栏组件几乎在每个页面都会使用，不接受 prop，该组件是专门为该应用所定制的。</p>
+<div class="language-text ext-text line-numbers-mode"><pre v-pre class="shiki" style="background-color: var(--shiki-color-background)"><code><span class="line"><span style="color: var(--shiki-color-text)">components/</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">|- TheHeading.vue</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">|- TheSidebar.vue</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">复制代码</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)"></span></span></code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h4 id="_1-2-3-基础组件名" tabindex="-1"><a class="header-anchor" href="#_1-2-3-基础组件名" aria-hidden="true">#</a> 1.2.3 基础组件名</h4>
+<blockquote>
+<p>基础组件：不包含业务，独立、具体功能的基础组件，比如<strong>日期选择器</strong>、<strong>模态框</strong>等。这类组件作为项目的基础控件，会被大量使用，因此组件的 API 进行过高强度的抽象，可以通过不同配置实现不同的功能。</p>
+</blockquote>
+<p>应用特定样式和约定的基础组件(也就是展示类的、无逻辑的或无状态、不掺杂业务逻辑的组件) 应该全部以一个特定的前缀开头 —— Base。<strong>基础组件在一个页面内可使用多次，在不同页面内也可复用，是高可复用组件。</strong></p>
+<div class="language-text ext-text line-numbers-mode"><pre v-pre class="shiki" style="background-color: var(--shiki-color-background)"><code><span class="line"><span style="color: var(--shiki-color-text)">components/</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">|- BaseButton.vue</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">|- BaseTable.vue</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">|- BaseIcon.vue</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">复制代码</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)"></span></span></code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h4 id="_1-2-4-业务组件" tabindex="-1"><a class="header-anchor" href="#_1-2-4-业务组件" aria-hidden="true">#</a> 1.2.4 业务组件</h4>
+<blockquote>
+<p>业务组件：它不像基础组件只包含某个功能，而是在业务中被多个页面复用的（具有可复用性），它与基础组件的区别是，业务组件只在当前项目中会用到，不具有通用性，而且会包含一些业务，比如数据请求；而基础组件不含业务，在任何项目中都可以使用，功能单一，比如一个具有数据校验功能的输入框。</p>
+</blockquote>
+<p><strong>掺杂了复杂业务的组件（拥有自身 <code v-pre>data</code>、<code v-pre>prop</code> 的相关处理）即业务组件</strong>应该以 <code v-pre>Custom</code> 前缀命名。业务组件在一个页面内比如：某个页面内有一个卡片列表，而样式和逻辑跟业务紧密相关的卡片就是业务组件。</p>
+<div class="language-text ext-text line-numbers-mode"><pre v-pre class="shiki" style="background-color: var(--shiki-color-background)"><code><span class="line"><span style="color: var(--shiki-color-text)">components/</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">|- CustomCard.vue</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">复制代码</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)"></span></span></code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h4 id="_1-2-5-紧密耦合的组件名" tabindex="-1"><a class="header-anchor" href="#_1-2-5-紧密耦合的组件名" aria-hidden="true">#</a> 1.2.5 紧密耦合的组件名</h4>
+<p><strong>和父组件紧密耦合的子组件应该以父组件名作为前缀命名。</strong> 因为编辑器通常会按字母顺序组织文件，所以这样做可以把相关联的文件排在一起。</p>
+<div class="language-text ext-text line-numbers-mode"><pre v-pre class="shiki" style="background-color: var(--shiki-color-background)"><code><span class="line"><span style="color: var(--shiki-color-text)">components/</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">|- TodoList.vue</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">|- TodoListItem.vue</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">|- TodoListItemButton.vue</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">复制代码</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)"></span></span></code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h4 id="_1-2-6-组件名中单词顺序" tabindex="-1"><a class="header-anchor" href="#_1-2-6-组件名中单词顺序" aria-hidden="true">#</a> 1.2.6 组件名中单词顺序</h4>
+<p><strong>组件名应该以高级别的 (通常是一般化描述的) 单词开头，以描述性的修饰词结尾。</strong> 因为编辑器通常会按字母顺序组织文件，所以现在组件之间的重要关系一目了然。如下组件主要是用于搜索和设置功能。</p>
+<div class="language-text ext-text line-numbers-mode"><pre v-pre class="shiki" style="background-color: var(--shiki-color-background)"><code><span class="line"><span style="color: var(--shiki-color-text)">components/</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">|- SearchButtonClear.vue</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">|- SearchButtonRun.vue</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">|- SearchInputQuery.vue</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">|- SearchInputExcludeGlob.vue</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">|- SettingsCheckboxTerms.vue</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">|- SettingsCheckboxLaunchOnStartup.vue</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">复制代码</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)"></span></span></code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>还有另一种多级目录的方式，把所有的搜索组件放到“search”目录，把所有的设置组件放到“settings”目录。我们只推荐在非常大型 (如有 100+ 个组件) 的应用下才考虑这么做，因为在多级目录间找来找去，要比在单个 components 目录下滚动查找要花费更多的精力。</p>
+<h4 id="_1-2-7-完整单词的组件名" tabindex="-1"><a class="header-anchor" href="#_1-2-7-完整单词的组件名" aria-hidden="true">#</a> 1.2.7 完整单词的组件名</h4>
+<p><strong>组件名应该倾向于而不是缩写。</strong> 编辑器中的自动补全已经让书写长命名的代价非常之低了，而其带来的明确性却是非常宝贵的。不常用的缩写尤其应该避免。</p>
+<div class="language-text ext-text line-numbers-mode"><pre v-pre class="shiki" style="background-color: var(--shiki-color-background)"><code><span class="line"><span style="color: var(--shiki-color-text)">components/</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">|- StudentDashboardSettings.vue</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">|- UserProfileOptions.vue</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">复制代码</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)"></span></span></code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="_1-3-代码参数命名" tabindex="-1"><a class="header-anchor" href="#_1-3-代码参数命名" aria-hidden="true">#</a> 1.3 代码参数命名</h3>
+<h4 id="_1-3-1-name" tabindex="-1"><a class="header-anchor" href="#_1-3-1-name" aria-hidden="true">#</a> 1.3.1 name</h4>
+<p><strong>组件名应该始终是多个单词，应该始终是 PascalCase 的。</strong> 根组件 App 以及 <code v-pre>&lt;transition&gt;</code>、<code v-pre>&lt;component&gt;</code> 之类的 Vue 内置组件除外。这样做可以避免跟现有的以及未来的 HTML 元素相冲突，因为所有的 HTML 元素名称都是单个单词的。</p>
+<div class="language-text ext-text line-numbers-mode"><pre v-pre class="shiki" style="background-color: var(--shiki-color-background)"><code><span class="line"><span style="color: var(--shiki-color-text)">export default {</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">  name: &#39;ToDoList&#39;,</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">  // ...</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">}</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">复制代码</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)"></span></span></code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h4 id="_1-3-2-prop" tabindex="-1"><a class="header-anchor" href="#_1-3-2-prop" aria-hidden="true">#</a> 1.3.2 prop</h4>
+<p><strong>在声明 prop 的时候，其命名应该始终使用 camelCase，而在模板和 JSX 中应该始终使用 kebab-case</strong>。我们单纯的遵循每个语言的约定，在 JavaScript 中更自然的是 camelCase。而在 HTML 中则是 kebab-case。</p>
+<div class="language-text ext-text line-numbers-mode"><pre v-pre class="shiki" style="background-color: var(--shiki-color-background)"><code><span class="line"><span style="color: var(--shiki-color-text)">&lt;WelcomeMessage greeting-text=&quot;hi&quot;/&gt;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">复制代码</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">export default {</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">  name: &#39;MyComponent&#39;,</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">  // ...</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">  props: {</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">    greetingText: {</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">      type: String,</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">      required: true,</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">      validator: function (value) {</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">        return [&#39;syncing&#39;, &#39;synced&#39;,].indexOf(value) !== -1</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">      }</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">    }</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">  }</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">}</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">复制代码</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)"></span></span></code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h4 id="_1-3-3-router" tabindex="-1"><a class="header-anchor" href="#_1-3-3-router" aria-hidden="true">#</a> 1.3.3 router</h4>
+<p><strong>Vue Router Path 命名采用 kebab-case 格式。</strong> 用 Snake（如：<code v-pre>/user_info</code>）或 camelCase（如：<code v-pre>/userInfo</code>)的单词会被当成一个单词，搜索引擎无法区分语义。</p>
+<div class="language-text ext-text line-numbers-mode"><pre v-pre class="shiki" style="background-color: var(--shiki-color-background)"><code><span class="line"><span style="color: var(--shiki-color-text)">// bad</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">{</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">  path: &#39;/user_info&#39;, // user_info 当成一个单词</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">  name: &#39;UserInfo&#39;,</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">  component: UserInfo,</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">  meta: {</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">    title: &#39; - 用户&#39;,</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">    desc: &#39;&#39;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">  }</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">},</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)"></span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">// good</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">{</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">  path: &#39;/user-info&#39;, // 能解析成 user info</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">  name: &#39;UserInfo&#39;,</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">  component: UserInfo,</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">  meta: {</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">    title: &#39; - 用户&#39;,</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">    desc: &#39;&#39;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">  }</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">},</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">复制代码</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)"></span></span></code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h4 id="_1-3-4-模板中组件" tabindex="-1"><a class="header-anchor" href="#_1-3-4-模板中组件" aria-hidden="true">#</a> 1.3.4 模板中组件</h4>
+<p><strong>对于绝大多数项目来说，在单文件组件和字符串模板中组件名应该总是 PascalCase 的，但是在 DOM 模板中总是 kebab-case 的。</strong></p>
+<div class="language-text ext-text line-numbers-mode"><pre v-pre class="shiki" style="background-color: var(--shiki-color-background)"><code><span class="line"><span style="color: var(--shiki-color-text)">&lt;!-- 在单文件组件和字符串模板中 --&gt;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">&lt;MyComponent/&gt;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)"></span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">&lt;!-- 在 DOM 模板中 --&gt;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">&lt;my-component&gt;&lt;/my-component&gt;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">复制代码</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)"></span></span></code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h4 id="_1-3-5-自闭合组件" tabindex="-1"><a class="header-anchor" href="#_1-3-5-自闭合组件" aria-hidden="true">#</a> 1.3.5 自闭合组件</h4>
+<p><strong>在单文件组件、字符串模板和 JSX 中没有内容的组件应该是自闭合的——但在 DOM 模板里永远不要这样做。</strong></p>
+<div class="language-text ext-text line-numbers-mode"><pre v-pre class="shiki" style="background-color: var(--shiki-color-background)"><code><span class="line"><span style="color: var(--shiki-color-text)">&lt;!-- 在单文件组件和字符串模板中 --&gt;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">&lt;MyComponent/&gt;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)"></span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">&lt;!-- 在所有地方 --&gt;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">&lt;my-component&gt;&lt;/my-component&gt;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">复制代码</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)"></span></span></code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h4 id="_1-3-6-变量" tabindex="-1"><a class="header-anchor" href="#_1-3-6-变量" aria-hidden="true">#</a> 1.3.6 变量</h4>
+<ul>
+<li>命名方法：camelCase</li>
+<li>命名规范：类型 + 对象描述或属性的方式</li>
+</ul>
+<div class="language-text ext-text line-numbers-mode"><pre v-pre class="shiki" style="background-color: var(--shiki-color-background)"><code><span class="line"><span style="color: var(--shiki-color-text)">// bad</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">var getTitle = &quot;LoginTable&quot;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)"></span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">// good</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">let tableTitle = &quot;LoginTable&quot;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">let mySchool = &quot;我的学校&quot;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">复制代码</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)"></span></span></code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h4 id="_1-3-7-常量" tabindex="-1"><a class="header-anchor" href="#_1-3-7-常量" aria-hidden="true">#</a> 1.3.7 常量</h4>
+<ul>
+<li>命名方法：全部大写下划线分割</li>
+<li>命名规范：使用大写字母和下划线来组合命名，下划线用以分割单词</li>
+</ul>
+<div class="language-text ext-text line-numbers-mode"><pre v-pre class="shiki" style="background-color: var(--shiki-color-background)"><code><span class="line"><span style="color: var(--shiki-color-text)">const MAX_COUNT = 10</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">const URL = &#39;http://test.host.com&#39;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">复制代码</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)"></span></span></code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h4 id="_1-3-8-方法" tabindex="-1"><a class="header-anchor" href="#_1-3-8-方法" aria-hidden="true">#</a> 1.3.8 方法</h4>
+<ul>
+<li>命名方法：camelCase</li>
+<li>命名规范：统一使用动词或者动词 + 名词形式</li>
+</ul>
+<div class="language-text ext-text line-numbers-mode"><pre v-pre class="shiki" style="background-color: var(--shiki-color-background)"><code><span class="line"><span style="color: var(--shiki-color-text)">// 1、普通情况下，使用动词 + 名词形式</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">// bad</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">go、nextPage、show、open、login</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)"></span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">// good</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">jumpPage、openCarInfoDialog</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)"></span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">// 2、请求数据方法，以 data 结尾</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">// bad</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">takeData、confirmData、getList、postForm</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)"></span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">// good</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">getListData、postFormData</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)"></span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">// 3、单个动词的情况</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">init、refresh</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">复制代码</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)"></span></span></code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><table>
+<thead>
+<tr>
+<th style="text-align:left">动词</th>
+<th style="text-align:left">含义</th>
+<th style="text-align:left">返回值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">can</td>
+<td style="text-align:left">判断是否可执行某个动作 (权 )</td>
+<td style="text-align:left">函数返回一个布尔值。true：可执行；false：不可执行；</td>
+</tr>
+<tr>
+<td style="text-align:left">has</td>
+<td style="text-align:left">判断是否含有某个值</td>
+<td style="text-align:left">函数返回一个布尔值。true：含有此值；false：不含有此值；</td>
+</tr>
+<tr>
+<td style="text-align:left">is</td>
+<td style="text-align:left">判断是否为某个值</td>
+<td style="text-align:left">函数返回一个布尔值。true：为某个值；false：不为某个值；</td>
+</tr>
+<tr>
+<td style="text-align:left">get</td>
+<td style="text-align:left">获取某个值</td>
+<td style="text-align:left">函数返回一个非布尔值</td>
+</tr>
+<tr>
+<td style="text-align:left">set</td>
+<td style="text-align:left">设置某个值</td>
+<td style="text-align:left">无返回值、返回是否设置成功或者返回链式对象</td>
+</tr>
+</tbody>
+</table>
+<h4 id="_1-3-9-自定义事件" tabindex="-1"><a class="header-anchor" href="#_1-3-9-自定义事件" aria-hidden="true">#</a> 1.3.9 自定义事件</h4>
+<p><strong>自定义事件应始终使用 kebab-case 的事件名。</strong></p>
+<p>不同于组件和 prop，事件名不存在任何自动化的大小写转换。而是触发的事件名需要完全匹配监听这个事件所用的名称。</p>
+<div class="language-text ext-text line-numbers-mode"><pre v-pre class="shiki" style="background-color: var(--shiki-color-background)"><code><span class="line"><span style="color: var(--shiki-color-text)">this.$emit(&#39;my-event&#39;)</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">复制代码</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">&lt;MyComponent @my-event=&quot;handleDoSomething&quot; /&gt;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">复制代码</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)"></span></span></code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>不同于组件和 prop，事件名不会被用作一个 JavaScript 变量名或 property 名，所以就没有理由使用 camelCase 或 PascalCase 了。并且 <code v-pre>v-on</code> 事件监听器在 DOM 模板中会被自动转换为全小写 (因为 HTML 是大小写不敏感的)，所以 <code v-pre>v-on:myEvent</code> 将会变成 <code v-pre>v-on:myevent</code>——导致 <code v-pre>myEvent</code> 不可能被监听到。</p>
+<ul>
+<li><strong>原生事件参考列表</strong>[1]</li>
+</ul>
+<p>由原生事件可以发现其使用方式如下：</p>
+<div class="language-text ext-text line-numbers-mode"><pre v-pre class="shiki" style="background-color: var(--shiki-color-background)"><code><span class="line"><span style="color: var(--shiki-color-text)">&lt;div</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">  @blur=&quot;toggleHeaderFocus&quot;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">  @focus=&quot;toggleHeaderFocus&quot;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">  @click=&quot;toggleMenu&quot;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">  @keydown.esc=&quot;handleKeydown&quot;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">  @keydown.enter=&quot;handleKeydown&quot;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">  @keydown.up.prevent=&quot;handleKeydown&quot;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">  @keydown.down.prevent=&quot;handleKeydown&quot;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">  @keydown.tab=&quot;handleKeydown&quot;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">  @keydown.delete=&quot;handleKeydown&quot;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">  @mouseenter=&quot;hasMouseHoverHead = true&quot;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">  @mouseleave=&quot;hasMouseHoverHead = false&quot;&gt;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">&lt;/div&gt;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">复制代码</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)"></span></span></code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>而为了区分<em>原生事件</em>和<em>自定义事件</em>在 Vue 中的使用，建议除了多单词事件名使用 kebab-case 的情况下，命名还需遵守为 <strong><code v-pre>on</code> + 动词</strong> 的形式，如下：</p>
+<div class="language-text ext-text line-numbers-mode"><pre v-pre class="shiki" style="background-color: var(--shiki-color-background)"><code><span class="line"><span style="color: var(--shiki-color-text)">&lt;!-- 父组件 --&gt;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">&lt;div</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">  @on-search=&quot;handleSearch&quot;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">  @on-clear=&quot;handleClear&quot;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">  @on-clickoutside=&quot;handleClickOutside&quot;&gt;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">&lt;/div&gt;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">复制代码</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">// 子组件</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">export default {</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">  methods: {</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">    handleTriggerItem () {</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">      this.$emit(&#39;on-clear&#39;)</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">    }</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">  }</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">}</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">复制代码</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)"></span></span></code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h4 id="_1-3-10-事件方法" tabindex="-1"><a class="header-anchor" href="#_1-3-10-事件方法" aria-hidden="true">#</a> 1.3.10 事件方法</h4>
+<ul>
+<li>命名方法：camelCase</li>
+<li>命名规范：handle + 名称（可选）+ 动词</li>
+</ul>
+<div class="language-text ext-text line-numbers-mode"><pre v-pre class="shiki" style="background-color: var(--shiki-color-background)"><code><span class="line"><span style="color: var(--shiki-color-text)">&lt;template&gt;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">  &lt;div</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">    @click.native.stop=&quot;handleItemClick()&quot;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">    @mouseenter.native.stop=&quot;handleItemHover()&quot;&gt;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">  &lt;/div&gt;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">&lt;/template&gt;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)"></span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">&lt;script&gt;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)"></span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">export default {</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">  methods: {</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">    handleItemClick () {</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">      //...</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">    },</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">    handleItemHover () {</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">      //...</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">    }</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">  }</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">}</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">&lt;/script&gt;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">复制代码</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)"></span></span></code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="二、代码规范" tabindex="-1"><a class="header-anchor" href="#二、代码规范" aria-hidden="true">#</a> 二、代码规范</h2>
+<h3 id="_2-1-vue" tabindex="-1"><a class="header-anchor" href="#_2-1-vue" aria-hidden="true">#</a> 2.1 Vue</h3>
+<h4 id="_2-1-1-代码结构" tabindex="-1"><a class="header-anchor" href="#_2-1-1-代码结构" aria-hidden="true">#</a> 2.1.1 代码结构</h4>
+<div class="language-text ext-text line-numbers-mode"><pre v-pre class="shiki" style="background-color: var(--shiki-color-background)"><code><span class="line"><span style="color: var(--shiki-color-text)">&lt;template&gt;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">  &lt;div id=&quot;my-component&quot;&gt;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">    &lt;DemoComponent /&gt;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">  &lt;/div&gt;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">&lt;/template&gt;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)"></span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">&lt;script&gt;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">import DemoComponent from &#39;../components/DemoComponent&#39;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)"></span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">export default {</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">  name: &#39;MyComponent&#39;,</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">  components: {</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">    DemoComponent</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">  },</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">  mixins: [],</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">  props: {},</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">  data () {</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">    return {}</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">  },</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">  computed: {},</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">  watch: {}</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">  created () {},</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">  mounted () {},</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">  destroyed () {},</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">  methods: {},</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">}</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">&lt;/script&gt;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)"></span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">&lt;style lang=&quot;scss&quot; scoped&gt;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">#my-component {</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">}</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">&lt;/style&gt;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">复制代码</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)"></span></span></code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h4 id="_2-1-2-data" tabindex="-1"><a class="header-anchor" href="#_2-1-2-data" aria-hidden="true">#</a> 2.1.2 data</h4>
+<p><strong>组件的 <code v-pre>data</code> 必须是一个函数。</strong></p>
+<div class="language-text ext-text line-numbers-mode"><pre v-pre class="shiki" style="background-color: var(--shiki-color-background)"><code><span class="line"><span style="color: var(--shiki-color-text)">// In a .vue file</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">export default {</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">  data () {</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">    return {</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">      foo: &#39;bar&#39;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">    }</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">  }</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">}</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">复制代码</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)"></span></span></code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h4 id="_2-1-3-prop" tabindex="-1"><a class="header-anchor" href="#_2-1-3-prop" aria-hidden="true">#</a> 2.1.3 prop</h4>
+<p><strong>Prop 定义应该尽量详细。</strong></p>
+<div class="language-text ext-text line-numbers-mode"><pre v-pre class="shiki" style="background-color: var(--shiki-color-background)"><code><span class="line"><span style="color: var(--shiki-color-text)">export default {</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">  props: {</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">    status: {</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">      type: String,</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">      required: true,</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">      validator: function (value) {</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">        return [</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">          &#39;syncing&#39;,</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">          &#39;synced&#39;,</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">          &#39;version-conflict&#39;,</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">          &#39;error&#39;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">        ].indexOf(value) !== -1</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">      }</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">    }</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">  }</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">}</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">复制代码</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)"></span></span></code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h4 id="_2-1-4-computed" tabindex="-1"><a class="header-anchor" href="#_2-1-4-computed" aria-hidden="true">#</a> 2.1.4 computed</h4>
+<p><strong>应该把复杂计算属性分割为尽可能多的更简单的属性。</strong> 小的、专注的计算属性减少了信息使用时的假设性限制，所以需求变更时也用不着那么多重构了。</p>
+<div class="language-text ext-text line-numbers-mode"><pre v-pre class="shiki" style="background-color: var(--shiki-color-background)"><code><span class="line"><span style="color: var(--shiki-color-text)">// bad</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">computed: {</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">  price: function () {</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">    var basePrice = this.manufactureCost / (1 - this.profitMargin)</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">    return (</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">      basePrice -</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">      basePrice * (this.discountPercent || 0)</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">    )</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">  }</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">}</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)"></span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">// good</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">computed: {</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">  basePrice: function () {</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">    return this.manufactureCost / (1 - this.profitMargin)</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">  },</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">  discount: function () {</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">    return this.basePrice * (this.discountPercent || 0)</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">  },</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">  finalPrice: function () {</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">    return this.basePrice - this.discount</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">  }</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">}</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">复制代码</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)"></span></span></code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h4 id="_2-1-5-为-v-for-设置键值" tabindex="-1"><a class="header-anchor" href="#_2-1-5-为-v-for-设置键值" aria-hidden="true">#</a> 2.1.5 为 <code v-pre>v-for</code> 设置键值</h4>
+<p><strong>在组件上必须用 <code v-pre>key</code> 搭配 <code v-pre>v-for</code></strong>，以便维护内部组件及其子树的状态。甚至在元素上维护可预测的行为，比如动画中的<strong>对象固化 (object constancy)</strong>[2]。</p>
+<div class="language-text ext-text line-numbers-mode"><pre v-pre class="shiki" style="background-color: var(--shiki-color-background)"><code><span class="line"><span style="color: var(--shiki-color-text)">&lt;ul&gt;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">  &lt;li</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">    v-for=&quot;todo in todos&quot;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">    :key=&quot;todo.id&quot;&gt;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">      {{ todo.text }}</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">  &lt;/li&gt;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">&lt;/ul&gt;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">复制代码</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)"></span></span></code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h4 id="_2-1-6-v-if-和-v-for-互斥" tabindex="-1"><a class="header-anchor" href="#_2-1-6-v-if-和-v-for-互斥" aria-hidden="true">#</a> 2.1.6 <code v-pre>v-if</code> 和 <code v-pre>v-for</code> 互斥</h4>
+<p><strong>永远不要把 <code v-pre>v-if</code> 和 <code v-pre>v-for</code> 同时用在同一个元素上。</strong></p>
+<div class="language-text ext-text line-numbers-mode"><pre v-pre class="shiki" style="background-color: var(--shiki-color-background)"><code><span class="line"><span style="color: var(--shiki-color-text)">&lt;!-- bad：控制台报错 --&gt;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">&lt;ul&gt;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">  &lt;li</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">    v-for=&quot;user in users&quot;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">    v-if=&quot;shouldShowUsers&quot;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">    :key=&quot;user.id&quot;&gt;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">      {{ user.name }}</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">  &lt;/li&gt;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">&lt;/ul&gt;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">复制代码</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)"></span></span></code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>一般我们在两种常见的情况下会倾向于这样做：</p>
+<ul>
+<li>为了过滤一个列表中的项目 (比如 <code v-pre>v-for=&quot;user in users&quot; v-if=&quot;user.isActive&quot;</code>)。在这种情形下，请将 <code v-pre>users</code> 替换为一个计算属性 (比如 <code v-pre>activeUsers</code>)，让其返回过滤后的列表。</li>
+</ul>
+<div class="language-text ext-text line-numbers-mode"><pre v-pre class="shiki" style="background-color: var(--shiki-color-background)"><code><span class="line"><span style="color: var(--shiki-color-text)">computed: {</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">  activeUsers: function () {</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">    return this.users.filter((user) =&gt; {</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">      return user.isActive</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">    })</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">  }</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">}</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">复制代码</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">&lt;ul&gt;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">  &lt;li</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">    v-for=&quot;user in activeUsers&quot;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">    :key=&quot;user.id&quot;&gt;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">      {{ user.name }}</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">  &lt;/li&gt;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">&lt;/ul&gt;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">复制代码</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)"></span></span></code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><ul>
+<li>为了避免渲染本应该被隐藏的列表 (比如 <code v-pre>v-for=&quot;user in users&quot; v-if=&quot;shouldShowUsers&quot;</code>)。这种情形下，请将 <code v-pre>v-if</code> 移动至容器元素上 (比如 <code v-pre>ul</code>, <code v-pre>ol</code>)。</li>
+</ul>
+<div class="language-text ext-text line-numbers-mode"><pre v-pre class="shiki" style="background-color: var(--shiki-color-background)"><code><span class="line"><span style="color: var(--shiki-color-text)">&lt;!-- bad --&gt;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">&lt;ul&gt;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">  &lt;li</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">    v-for=&quot;user in users&quot;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">    v-if=&quot;shouldShowUsers&quot;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">    :key=&quot;user.id&quot;&gt;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">      {{ user.name }}</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">  &lt;/li&gt;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">&lt;/ul&gt;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)"></span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">&lt;!-- good --&gt;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">&lt;ul v-if=&quot;shouldShowUsers&quot;&gt;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">  &lt;li</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">    v-for=&quot;user in users&quot;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">    :key=&quot;user.id&quot;&gt;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">      {{ user.name }}</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">  &lt;/li&gt;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">&lt;/ul&gt;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">复制代码</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)"></span></span></code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h4 id="_2-1-7-多个-attribute-的元素" tabindex="-1"><a class="header-anchor" href="#_2-1-7-多个-attribute-的元素" aria-hidden="true">#</a> 2.1.7 多个 attribute 的元素</h4>
+<p><strong>多个 attribute 的元素应该分多行撰写，每个 attribute 一行。</strong></p>
+<div class="language-text ext-text line-numbers-mode"><pre v-pre class="shiki" style="background-color: var(--shiki-color-background)"><code><span class="line"><span style="color: var(--shiki-color-text)">&lt;!-- bad --&gt;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">&lt;img src=&quot;https://vuejs.org/images/logo.png&quot; alt=&quot;Vue Logo&quot;&gt;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">&lt;MyComponent foo=&quot;a&quot; bar=&quot;b&quot; baz=&quot;c&quot;/&gt;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">复制代码</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">&lt;!-- good --&gt;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">&lt;img</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">  src=&quot;https://vuejs.org/images/logo.png&quot;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">  alt=&quot;Vue Logo&quot;&gt;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)"></span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">&lt;MyComponent</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">  foo=&quot;a&quot;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">  bar=&quot;b&quot;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">  baz=&quot;c&quot;/&gt;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">复制代码</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)"></span></span></code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h4 id="_2-1-8-模板中简单的表达式" tabindex="-1"><a class="header-anchor" href="#_2-1-8-模板中简单的表达式" aria-hidden="true">#</a> 2.1.8 模板中简单的表达式</h4>
+<p><strong>组件模板应该只包含简单的表达式，复杂的表达式则应该重构为计算属性或方法。</strong></p>
+<p>复杂表达式会让你的模板变得不那么声明式。我们应该尽量描述应该出现的<strong>是什么</strong>，而非<strong>如何</strong>计算那个值。而且计算属性和方法使得代码可以重用。</p>
+<div class="language-text ext-text line-numbers-mode"><pre v-pre class="shiki" style="background-color: var(--shiki-color-background)"><code><span class="line"><span style="color: var(--shiki-color-text)">// bad</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">{{</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">  fullName.split(&#39; &#39;).map((word) =&gt; {</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">    return word[0].toUpperCase() + word.slice(1)</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">  }).join(&#39; &#39;)</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">}}</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">复制代码</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)"></span></span></code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>更好的做法：</p>
+<div class="language-text ext-text line-numbers-mode"><pre v-pre class="shiki" style="background-color: var(--shiki-color-background)"><code><span class="line"><span style="color: var(--shiki-color-text)">&lt;!-- 在模板中 --&gt;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">{{ normalizedFullName }}</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">复制代码</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">// 复杂表达式已经移入一个计算属性</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">computed: {</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">  normalizedFullName: function () {</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">    return this.fullName.split(&#39; &#39;).map(function (word) {</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">      return word[0].toUpperCase() + word.slice(1)</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">    }).join(&#39; &#39;)</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">  }</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">}</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">复制代码</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)"></span></span></code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h4 id="_2-1-9-带引号的-attribute-值" tabindex="-1"><a class="header-anchor" href="#_2-1-9-带引号的-attribute-值" aria-hidden="true">#</a> 2.1.9 带引号的 attribute 值</h4>
+<p><strong>非空 HTML 特性值应该始终带双引号。</strong></p>
+<div class="language-text ext-text line-numbers-mode"><pre v-pre class="shiki" style="background-color: var(--shiki-color-background)"><code><span class="line"><span style="color: var(--shiki-color-text)">&lt;!-- bad --&gt;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">&lt;input type=text&gt;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">&lt;AppSidebar :style={width:sidebarWidth+&#39;px&#39;}&gt;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">复制代码</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">&lt;!-- good --&gt;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">&lt;input type=&quot;text&quot;&gt;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">&lt;AppSidebar :style=&quot;{ width: sidebarWidth + &#39;px&#39; }&quot;&gt;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">复制代码</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)"></span></span></code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h4 id="_2-1-10-指令缩写" tabindex="-1"><a class="header-anchor" href="#_2-1-10-指令缩写" aria-hidden="true">#</a> 2.1.10 指令缩写</h4>
+<ul>
+<li><strong>用 <code v-pre>:</code> 表示 <code v-pre>v-bind:</code></strong></li>
+<li><strong>用 <code v-pre>@</code> 表示 <code v-pre>v-on:</code></strong></li>
+<li><strong>用 <code v-pre>#</code> 表示 <code v-pre>v-slot:</code></strong></li>
+</ul>
+<div class="language-text ext-text line-numbers-mode"><pre v-pre class="shiki" style="background-color: var(--shiki-color-background)"><code><span class="line"><span style="color: var(--shiki-color-text)">&lt;input</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">  :value=&quot;newTodoText&quot;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">  :placeholder=&quot;newTodoInstructions&quot;&gt;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)"></span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">&lt;input</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">  @input=&quot;onInput&quot;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">  @focus=&quot;onFocus&quot;&gt;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)"></span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">&lt;template #header&gt;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">  &lt;h1&gt;Here might be a page title&lt;/h1&gt;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">&lt;/template&gt;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)"></span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">&lt;template #footer&gt;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">  &lt;p&gt;Here&#39;s some contact info&lt;/p&gt;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">&lt;/template&gt;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">复制代码</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)"></span></span></code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="_2-2-html" tabindex="-1"><a class="header-anchor" href="#_2-2-html" aria-hidden="true">#</a> 2.2 HTML</h3>
+<h4 id="_2-2-1-文件模板" tabindex="-1"><a class="header-anchor" href="#_2-2-1-文件模板" aria-hidden="true">#</a> 2.2.1 文件模板</h4>
+<p>HTML5 文件模板：</p>
+<div class="language-text ext-text line-numbers-mode"><pre v-pre class="shiki" style="background-color: var(--shiki-color-background)"><code><span class="line"><span style="color: var(--shiki-color-text)">&lt;!DOCTYPE html&gt;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">  &lt;html lang=&quot;zh-CN&quot;&gt;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">  &lt;head&gt;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">    &lt;meta charset=&quot;UTF-8&quot;&gt;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">    &lt;title&gt;HTML5标准模版&lt;/title&gt;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">  &lt;/head&gt;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">  &lt;body&gt;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">  &lt;/body&gt;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">&lt;/html&gt;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">复制代码</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)"></span></span></code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>移动端：</p>
+<div class="language-text ext-text line-numbers-mode"><pre v-pre class="shiki" style="background-color: var(--shiki-color-background)"><code><span class="line"><span style="color: var(--shiki-color-text)">&lt;!DOCTYPE html&gt;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">&lt;html lang=&quot;zh-CN&quot;&gt;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">&lt;head&gt;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">    &lt;meta charset=&quot;UTF-8&quot;&gt;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">    &lt;meta name=&quot;viewport&quot;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">        content=&quot;width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no&quot;&gt;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">    &lt;meta name=&quot;format-detection&quot; content=&quot;telephone=no&quot;&gt;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">    &lt;title&gt;移动端HTML模版&lt;/title&gt;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)"></span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">    &lt;!-- S DNS预解析 --&gt;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">    &lt;link rel=&quot;dns-prefetch&quot; href=&quot;&quot;&gt;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">    &lt;!-- E DNS预解析 --&gt;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)"></span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">    &lt;!-- S 线上样式页面片，开发请直接取消注释引用 --&gt;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">    &lt;!-- #include virtual=&quot;&quot; --&gt;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">    &lt;!-- E 线上样式页面片 --&gt;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)"></span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">    &lt;!-- S 本地调试，根据开发模式选择调试方式，请开发删除 --&gt;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">    &lt;link rel=&quot;stylesheet&quot; href=&quot;css/index.css&quot;&gt;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">    &lt;!-- /本地调试方式 --&gt;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)"></span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">    &lt;link rel=&quot;stylesheet&quot; href=&quot;http://srcPath/index.css&quot;&gt;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">    &lt;!-- /开发机调试方式 --&gt;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">    &lt;!-- E 本地调试 --&gt;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)"></span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">&lt;/head&gt;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">&lt;body&gt;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">&lt;/body&gt;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">&lt;/html&gt;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">复制代码</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)"></span></span></code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>PC 端：</p>
+<div class="language-text ext-text line-numbers-mode"><pre v-pre class="shiki" style="background-color: var(--shiki-color-background)"><code><span class="line"><span style="color: var(--shiki-color-text)">&lt;!DOCTYPE html&gt;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">&lt;html lang=&quot;zh-CN&quot;&gt;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">&lt;head&gt;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">    &lt;meta charset=&quot;UTF-8&quot;&gt;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">    &lt;meta name=&quot;keywords&quot; content=&quot;your keywords&quot;&gt;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">    &lt;meta name=&quot;description&quot; content=&quot;your description&quot;&gt;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">    &lt;meta name=&quot;author&quot; content=&quot;author,email address&quot;&gt;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">    &lt;meta name=&quot;robots&quot; content=&quot;index,follow&quot;&gt;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=Edge,chrome=1&quot;&gt;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">    &lt;meta name=&quot;renderer&quot; content=&quot;ie-stand&quot;&gt;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">    &lt;title&gt;PC端HTML模版&lt;/title&gt;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)"></span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">    &lt;!-- S DNS预解析 --&gt;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">    &lt;link rel=&quot;dns-prefetch&quot; href=&quot;&quot;&gt;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">    &lt;!-- E DNS预解析 --&gt;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)"></span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">    &lt;!-- S 线上样式页面片，开发请直接取消注释引用 --&gt;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">    &lt;!-- #include virtual=&quot;&quot; --&gt;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">    &lt;!-- E 线上样式页面片 --&gt;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)"></span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">    &lt;!-- S 本地调试，根据开发模式选择调试方式，请开发删除 --&gt;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">    &lt;link rel=&quot;stylesheet&quot; href=&quot;css/index.css&quot;&gt;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">    &lt;!-- /本地调试方式 --&gt;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)"></span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">    &lt;link rel=&quot;stylesheet&quot; href=&quot;http://srcPath/index.css&quot;&gt;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">    &lt;!-- /开发机调试方式 --&gt;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">    &lt;!-- E 本地调试 --&gt;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">&lt;/head&gt;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">&lt;body&gt;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">&lt;/body&gt;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">&lt;/html&gt;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">复制代码</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)"></span></span></code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h4 id="_2-2-2-元素及标签闭合" tabindex="-1"><a class="header-anchor" href="#_2-2-2-元素及标签闭合" aria-hidden="true">#</a> 2.2.2 元素及标签闭合</h4>
+<p>HTML 元素共有以下 5 种：</p>
+<ul>
+<li>空元素：area、base、br、col、command、embed、hr、img、input、keygen、link、meta、param、source、track、wbr</li>
+<li>原始文本元素：script、style</li>
+<li>RCDATA 元素：textarea、title</li>
+<li>外来元素：来自 MathML 命名空间和 SVG 命名空间的元素</li>
+<li>常规元素：其他 HTML 允许的元素都称为常规元素</li>
+</ul>
+<p>为了能让浏览器更好的解析代码以及能让代码具有更好的可读性，有如下约定：</p>
+<ul>
+<li>所有具有开始标签和结束标签的元素都要写上起止标签，某些允许省略开始标签或和束标签的元素亦都要写上。</li>
+<li>空元素标签都不加 “/” 字符。</li>
+</ul>
+<div class="language-text ext-text line-numbers-mode"><pre v-pre class="shiki" style="background-color: var(--shiki-color-background)"><code><span class="line"><span style="color: var(--shiki-color-text)">&lt;!-- good --&gt;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">&lt;div&gt;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">    &lt;h1&gt;我是h1标题&lt;/h1&gt;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">    &lt;p&gt;我是一段文字，我有始有终，浏览器能正确解析&lt;/p&gt;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">&lt;/div&gt;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)"></span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">&lt;br data-tomark-pass&gt;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)"></span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">&lt;!-- bad --&gt;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">&lt;div&gt;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">    &lt;h1&gt;我是h1标题&lt;/h1&gt;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">    &lt;p&gt;我是一段文字，我有始无终，浏览器亦能正确解析</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">&lt;/div&gt;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)"></span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">&lt;br/&gt;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">复制代码</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)"></span></span></code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h4 id="_2-2-3-代码嵌套" tabindex="-1"><a class="header-anchor" href="#_2-2-3-代码嵌套" aria-hidden="true">#</a> 2.2.3 代码嵌套</h4>
+<p>元素嵌套规范，每个块状元素独立一行，内联元素可选。</p>
+<div class="language-text ext-text line-numbers-mode"><pre v-pre class="shiki" style="background-color: var(--shiki-color-background)"><code><span class="line"><span style="color: var(--shiki-color-text)">&lt;!-- good --&gt;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">&lt;div&gt;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">    &lt;h1&gt;&lt;/h1&gt;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">    &lt;p&gt;&lt;/p&gt;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">&lt;/div&gt;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">&lt;p&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/p&gt;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)"></span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">&lt;!-- bad --&gt;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">&lt;div&gt;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">    &lt;h1&gt;&lt;/h1&gt;&lt;p&gt;&lt;/p&gt;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">&lt;/div&gt;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">&lt;p&gt;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">    &lt;span&gt;&lt;/span&gt;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">    &lt;span&gt;&lt;/span&gt;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">&lt;/p&gt;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">复制代码</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)"></span></span></code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>段落元素与标题元素只能嵌套内联元素。</p>
+<div class="language-text ext-text line-numbers-mode"><pre v-pre class="shiki" style="background-color: var(--shiki-color-background)"><code><span class="line"><span style="color: var(--shiki-color-text)">&lt;!-- good --&gt;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">&lt;h1&gt;&lt;span&gt;&lt;/span&gt;&lt;/h1&gt;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">&lt;p&gt;&lt;span&gt;&lt;/span&gt;&lt;span&gt;&lt;/span&gt;&lt;/p&gt;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)"></span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">&lt;!-- bad --&gt;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">&lt;h1&gt;&lt;div&gt;&lt;/div&gt;&lt;/h1&gt;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">&lt;p&gt;&lt;div&gt;&lt;/div&gt;&lt;div&gt;&lt;/div&gt;&lt;/p&gt;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">复制代码</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)"></span></span></code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="_2-3-css" tabindex="-1"><a class="header-anchor" href="#_2-3-css" aria-hidden="true">#</a> 2.3 CSS</h3>
+<h4 id="_2-3-1-样式文件" tabindex="-1"><a class="header-anchor" href="#_2-3-1-样式文件" aria-hidden="true">#</a> 2.3.1 样式文件</h4>
+<p>样式文件必须写上 <code v-pre>@charset</code> 规则，并且一定要在样式文件的第一行首个字符位置开始写，编码名用 <code v-pre>“UTF-8”</code>。</p>
+<ul>
+<li>推荐：</li>
+</ul>
+<div class="language-text ext-text line-numbers-mode"><pre v-pre class="shiki" style="background-color: var(--shiki-color-background)"><code><span class="line"><span style="color: var(--shiki-color-text)">@charset &quot;UTF-8&quot;;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">.jdc {}</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">复制代码</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)"></span></span></code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><ul>
+<li>不推荐：</li>
+</ul>
+<div class="language-text ext-text line-numbers-mode"><pre v-pre class="shiki" style="background-color: var(--shiki-color-background)"><code><span class="line"><span style="color: var(--shiki-color-text)">/* @charset规则不在文件首行首个字符开始 */</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">@charset &quot;UTF-8&quot;;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">.jdc {}</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)"></span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">/* @charset规则没有用小写 */</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">@CHARSET &quot;UTF-8&quot;;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">.jdc {}</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)"></span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">/* 无@charset规则 */</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">.jdc {}</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">复制代码</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)"></span></span></code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h4 id="_2-3-2-代码格式化" tabindex="-1"><a class="header-anchor" href="#_2-3-2-代码格式化" aria-hidden="true">#</a> 2.3.2 代码格式化</h4>
+<p>样式书写一般有两种：一种是紧凑格式 （Compact），一种是展开格式（Expanded）。</p>
+<ul>
+<li>推荐：展开格式（Expanded）</li>
+</ul>
+<div class="language-text ext-text line-numbers-mode"><pre v-pre class="shiki" style="background-color: var(--shiki-color-background)"><code><span class="line"><span style="color: var(--shiki-color-text)">.jdc {</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">  display: block;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">  width: 50px;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">}</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">复制代码</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)"></span></span></code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><ul>
+<li>不推荐：紧凑格式 （Compact）</li>
+</ul>
+<div class="language-text ext-text line-numbers-mode"><pre v-pre class="shiki" style="background-color: var(--shiki-color-background)"><code><span class="line"><span style="color: var(--shiki-color-text)">.jdc { display: block; width: 50px;}</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">复制代码</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)"></span></span></code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div></div></div><h4 id="_2-3-3-代码大小写" tabindex="-1"><a class="header-anchor" href="#_2-3-3-代码大小写" aria-hidden="true">#</a> 2.3.3 代码大小写</h4>
+<p>样式选择器，属性名，属性值关键字全部使用小写字母书写，属性字符串允许使用大小写。</p>
+<ul>
+<li>推荐：</li>
+</ul>
+<div class="language-text ext-text line-numbers-mode"><pre v-pre class="shiki" style="background-color: var(--shiki-color-background)"><code><span class="line"><span style="color: var(--shiki-color-text)">.jdc {</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">  display: block;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">}</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">复制代码</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)"></span></span></code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><ul>
+<li>不推荐：</li>
+</ul>
+<div class="language-text ext-text line-numbers-mode"><pre v-pre class="shiki" style="background-color: var(--shiki-color-background)"><code><span class="line"><span style="color: var(--shiki-color-text)">.JDC {</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">  DISPLAY: BLOCK;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">}</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">复制代码</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)"></span></span></code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h4 id="_2-3-4-代码易读性" tabindex="-1"><a class="header-anchor" href="#_2-3-4-代码易读性" aria-hidden="true">#</a> 2.3.4 代码易读性</h4>
+<ol>
+<li>左括号与类名之间一个空格，冒号与属性值之间一个空格。</li>
+</ol>
+<ul>
+<li>推荐：</li>
+</ul>
+<div class="language-text ext-text line-numbers-mode"><pre v-pre class="shiki" style="background-color: var(--shiki-color-background)"><code><span class="line"><span style="color: var(--shiki-color-text)">.jdc {</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">  width: 100%;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">}</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">复制代码</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)"></span></span></code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><ul>
+<li>不推荐：</li>
+</ul>
+<div class="language-text ext-text line-numbers-mode"><pre v-pre class="shiki" style="background-color: var(--shiki-color-background)"><code><span class="line"><span style="color: var(--shiki-color-text)">.jdc{</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">  width:100%;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">}</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">复制代码</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)"></span></span></code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><ol>
+<li>逗号分隔的取值，逗号之后一个空格。</li>
+</ol>
+<ul>
+<li>推荐：</li>
+</ul>
+<div class="language-text ext-text line-numbers-mode"><pre v-pre class="shiki" style="background-color: var(--shiki-color-background)"><code><span class="line"><span style="color: var(--shiki-color-text)">.jdc {</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">  box-shadow: 1px 1px 1px #333, 2px 2px 2px #ccc;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">}</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">复制代码</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)"></span></span></code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><ul>
+<li>不推荐：</li>
+</ul>
+<div class="language-text ext-text line-numbers-mode"><pre v-pre class="shiki" style="background-color: var(--shiki-color-background)"><code><span class="line"><span style="color: var(--shiki-color-text)">.jdc {</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">  box-shadow: 1px 1px 1px #333,2px 2px 2px #ccc;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">}</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">复制代码</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)"></span></span></code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><ol>
+<li>为单个 CSS 选择器或新声明开启新行。</li>
+</ol>
+<ul>
+<li>推荐：</li>
+</ul>
+<div class="language-text ext-text line-numbers-mode"><pre v-pre class="shiki" style="background-color: var(--shiki-color-background)"><code><span class="line"><span style="color: var(--shiki-color-text)">.jdc, .jdc_logo, .jdc_hd {</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">  color: #ff0;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">}</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)"></span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">.nav{</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">  color: #fff;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">}</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">复制代码</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)"></span></span></code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><ul>
+<li>不推荐：</li>
+</ul>
+<div class="language-text ext-text line-numbers-mode"><pre v-pre class="shiki" style="background-color: var(--shiki-color-background)"><code><span class="line"><span style="color: var(--shiki-color-text)">.jdc, .jdc_logo, .jdc_hd {</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">  color: #ff0;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">}.nav{</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">  color: #fff;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">}</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">复制代码</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)"></span></span></code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><ol>
+<li>颜色值 <code v-pre>rgb()</code> <code v-pre>rgba()</code> <code v-pre>hsl()</code> <code v-pre>hsla()</code> <code v-pre>rect()</code> 中不需有空格，且取值不要带有不必要的 0。</li>
+</ol>
+<ul>
+<li>推荐：</li>
+</ul>
+<div class="language-text ext-text line-numbers-mode"><pre v-pre class="shiki" style="background-color: var(--shiki-color-background)"><code><span class="line"><span style="color: var(--shiki-color-text)">.jdc {</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">  color: rgba(255,255,255,.5);</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">}</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">复制代码</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)"></span></span></code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><ul>
+<li>不推荐：</li>
+</ul>
+<div class="language-text ext-text line-numbers-mode"><pre v-pre class="shiki" style="background-color: var(--shiki-color-background)"><code><span class="line"><span style="color: var(--shiki-color-text)">.jdc {</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">  color: rgba( 255, 255, 255, 0.5 );</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">}</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">复制代码</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)"></span></span></code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><ol>
+<li>属性值十六进制数值能用简写的尽量用简写。</li>
+</ol>
+<ul>
+<li>推荐：</li>
+</ul>
+<div class="language-text ext-text line-numbers-mode"><pre v-pre class="shiki" style="background-color: var(--shiki-color-background)"><code><span class="line"><span style="color: var(--shiki-color-text)">.jdc {</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">  color: #fff;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">}</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">复制代码</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)"></span></span></code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><ul>
+<li>不推荐：</li>
+</ul>
+<div class="language-text ext-text line-numbers-mode"><pre v-pre class="shiki" style="background-color: var(--shiki-color-background)"><code><span class="line"><span style="color: var(--shiki-color-text)">.jdc {</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">  color: #ffffff;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">}</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">复制代码</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)"></span></span></code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><ol>
+<li>不要为 <code v-pre>0</code> 指明单位。</li>
+</ol>
+<ul>
+<li>推荐：</li>
+</ul>
+<div class="language-text ext-text line-numbers-mode"><pre v-pre class="shiki" style="background-color: var(--shiki-color-background)"><code><span class="line"><span style="color: var(--shiki-color-text)">.jdc {</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">  margin: 0 10px;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">}</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">复制代码</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)"></span></span></code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><ul>
+<li>不推荐：</li>
+</ul>
+<div class="language-text ext-text line-numbers-mode"><pre v-pre class="shiki" style="background-color: var(--shiki-color-background)"><code><span class="line"><span style="color: var(--shiki-color-text)">.jdc {</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">  margin: 0px 10px;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">}</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">复制代码</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)"></span></span></code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h4 id="_2-3-5-属性值引号" tabindex="-1"><a class="header-anchor" href="#_2-3-5-属性值引号" aria-hidden="true">#</a> 2.3.5 属性值引号</h4>
+<p>CSS 属性值需要用到引号时，统一使用单引号。</p>
+<ul>
+<li>推荐：</li>
+</ul>
+<div class="language-text ext-text line-numbers-mode"><pre v-pre class="shiki" style="background-color: var(--shiki-color-background)"><code><span class="line"><span style="color: var(--shiki-color-text)">.jdc {</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">  font-family: &#39;Hiragino Sans GB&#39;;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">}</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">复制代码</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)"></span></span></code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><ul>
+<li>不推荐：</li>
+</ul>
+<div class="language-text ext-text line-numbers-mode"><pre v-pre class="shiki" style="background-color: var(--shiki-color-background)"><code><span class="line"><span style="color: var(--shiki-color-text)">.jdc {</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">  font-family: &quot;Hiragino Sans GB&quot;;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">}</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">复制代码</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)"></span></span></code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h4 id="_2-3-6-属性书写建议" tabindex="-1"><a class="header-anchor" href="#_2-3-6-属性书写建议" aria-hidden="true">#</a> 2.3.6 属性书写建议</h4>
+<p>建议遵循以下顺序：</p>
+<ol>
+<li>布局定位属性：display / position / float / clear / visibility / overflow</li>
+<li>自身属性：width / height / margin / padding / border / background</li>
+<li>文本属性：color / font / text-decoration / text-align / vertical-align / white- space / break-word</li>
+<li>其他属性（CSS3）：content / cursor / border-radius / box-shadow / text-shadow / background: linear-gradient …</li>
+</ol>
+<div class="language-text ext-text line-numbers-mode"><pre v-pre class="shiki" style="background-color: var(--shiki-color-background)"><code><span class="line"><span style="color: var(--shiki-color-text)">.jdc {</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">  display: block;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">  position: relative;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">  float: left;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">  width: 100px;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">  height: 100px;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">  margin: 0 10px;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">  padding: 20px 0;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">  font-family: Arial, &#39;Helvetica Neue&#39;, Helvetica, sans-serif;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">  color: #333;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">  background: rgba(0,0,0,.5);</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">  -webkit-border-radius: 10px;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">  -moz-border-radius: 10px;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">  -o-border-radius: 10px;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">  -ms-border-radius: 10px;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">  border-radius: 10px;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">}</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">复制代码</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)"></span></span></code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h4 id="_3-3-7-css3-浏览器私有前缀" tabindex="-1"><a class="header-anchor" href="#_3-3-7-css3-浏览器私有前缀" aria-hidden="true">#</a> 3.3.7 CSS3 浏览器私有前缀</h4>
+<p>CSS3 浏览器私有前缀在前，标准前缀在后。</p>
+<div class="language-text ext-text line-numbers-mode"><pre v-pre class="shiki" style="background-color: var(--shiki-color-background)"><code><span class="line"><span style="color: var(--shiki-color-text)">.jdc {</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">  -webkit-border-radius: 10px;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">  -moz-border-radius: 10px;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">  -o-border-radius: 10px;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">  -ms-border-radius: 10px;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">  border-radius: 10px;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">}</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">复制代码</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)"></span></span></code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="_2-4-javascript" tabindex="-1"><a class="header-anchor" href="#_2-4-javascript" aria-hidden="true">#</a> 2.4 JavaScript</h3>
+<h4 id="_2-4-1-单行代码块" tabindex="-1"><a class="header-anchor" href="#_2-4-1-单行代码块" aria-hidden="true">#</a> 2.4.1 单行代码块</h4>
+<p>在单行代码块中使用空格。</p>
+<ul>
+<li>不推荐：</li>
+</ul>
+<div class="language-text ext-text line-numbers-mode"><pre v-pre class="shiki" style="background-color: var(--shiki-color-background)"><code><span class="line"><span style="color: var(--shiki-color-text)">function foo () {return true}</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">if (foo) {bar = 0}</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">复制代码</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)"></span></span></code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><ul>
+<li>推荐：</li>
+</ul>
+<div class="language-text ext-text line-numbers-mode"><pre v-pre class="shiki" style="background-color: var(--shiki-color-background)"><code><span class="line"><span style="color: var(--shiki-color-text)">function foo () { return true }</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">if (foo) { bar = 0 }</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">复制代码</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)"></span></span></code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h4 id="_2-4-2-大括号风格" tabindex="-1"><a class="header-anchor" href="#_2-4-2-大括号风格" aria-hidden="true">#</a> 2.4.2 大括号风格</h4>
+<p>在编程过程中，大括号风格与缩进风格紧密联系，用来描述大括号相对代码块位置的方法有很多。在 JavaScript 中，主要有三种风格，如下：</p>
+<ul>
+<li><strong>【推荐】One True Brace Style</strong></li>
+</ul>
+<div class="language-text ext-text line-numbers-mode"><pre v-pre class="shiki" style="background-color: var(--shiki-color-background)"><code><span class="line"><span style="color: var(--shiki-color-text)">if (foo) {</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">  bar()</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">} else {</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">  baz()</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">}</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">复制代码</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)"></span></span></code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><ul>
+<li><strong>Stroustrup</strong></li>
+</ul>
+<div class="language-text ext-text line-numbers-mode"><pre v-pre class="shiki" style="background-color: var(--shiki-color-background)"><code><span class="line"><span style="color: var(--shiki-color-text)">if (foo) {</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">  bar()</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">}</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">else {</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">  baz()</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">}</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">复制代码</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)"></span></span></code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><ul>
+<li><strong>Allman</strong></li>
+</ul>
+<div class="language-text ext-text line-numbers-mode"><pre v-pre class="shiki" style="background-color: var(--shiki-color-background)"><code><span class="line"><span style="color: var(--shiki-color-text)">if (foo)</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">{</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">  bar()</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">}</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">else</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">{</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">  baz()</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">}</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">复制代码</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)"></span></span></code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h4 id="_2-4-3-代码中的空格" tabindex="-1"><a class="header-anchor" href="#_2-4-3-代码中的空格" aria-hidden="true">#</a> 2.4.3 代码中的空格</h4>
+<ol>
+<li>逗号前后的空格可以提高代码的可读性，团队约定在逗号后面使用空格，逗号前面不加空格。</li>
+</ol>
+<ul>
+<li>推荐：</li>
+</ul>
+<div class="language-text ext-text line-numbers-mode"><pre v-pre class="shiki" style="background-color: var(--shiki-color-background)"><code><span class="line"><span style="color: var(--shiki-color-text)">var foo = 1, bar = 2</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">复制代码</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)"></span></span></code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div></div></div><ul>
+<li>不推荐：</li>
+</ul>
+<div class="language-text ext-text line-numbers-mode"><pre v-pre class="shiki" style="background-color: var(--shiki-color-background)"><code><span class="line"><span style="color: var(--shiki-color-text)">var foo = 1,bar = 2</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)"></span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">var foo = 1 , bar = 2</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)"></span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">var foo = 1 ,bar = 2</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">复制代码</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)"></span></span></code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><ol>
+<li>对象字面量的键和值之间不能存在空格，且要求对象字面量的冒号和值之间存在一个空格。</li>
+</ol>
+<ul>
+<li>推荐：</li>
+</ul>
+<div class="language-text ext-text line-numbers-mode"><pre v-pre class="shiki" style="background-color: var(--shiki-color-background)"><code><span class="line"><span style="color: var(--shiki-color-text)">var obj = { &#39;foo&#39;: &#39;haha&#39; }</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">复制代码</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)"></span></span></code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div></div></div><ul>
+<li>不推荐：</li>
+</ul>
+<div class="language-text ext-text line-numbers-mode"><pre v-pre class="shiki" style="background-color: var(--shiki-color-background)"><code><span class="line"><span style="color: var(--shiki-color-text)">var obj = { &#39;foo&#39; : &#39;haha&#39; }</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">复制代码</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)"></span></span></code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div></div></div><ol>
+<li>代码块前要添加空格。</li>
+</ol>
+<ul>
+<li>推荐：</li>
+</ul>
+<div class="language-text ext-text line-numbers-mode"><pre v-pre class="shiki" style="background-color: var(--shiki-color-background)"><code><span class="line"><span style="color: var(--shiki-color-text)">if (a) {</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">  b()</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">}</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)"></span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">function a () {}</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">复制代码</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)"></span></span></code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><ul>
+<li>不推荐：</li>
+</ul>
+<div class="language-text ext-text line-numbers-mode"><pre v-pre class="shiki" style="background-color: var(--shiki-color-background)"><code><span class="line"><span style="color: var(--shiki-color-text)">if (a){</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">  b()</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">}</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)"></span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">function a (){}</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">复制代码</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)"></span></span></code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><ol>
+<li>函数声明括号前要加空格。</li>
+</ol>
+<ul>
+<li>推荐：</li>
+</ul>
+<div class="language-text ext-text line-numbers-mode"><pre v-pre class="shiki" style="background-color: var(--shiki-color-background)"><code><span class="line"><span style="color: var(--shiki-color-text)">function func (x) {</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">  // ...</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">}</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">复制代码</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)"></span></span></code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><ul>
+<li>不推荐：</li>
+</ul>
+<div class="language-text ext-text line-numbers-mode"><pre v-pre class="shiki" style="background-color: var(--shiki-color-background)"><code><span class="line"><span style="color: var(--shiki-color-text)">function func(x) {</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">  // ...</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">}</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">复制代码</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)"></span></span></code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><ol>
+<li>在函数调用时，禁止使用空格。</li>
+</ol>
+<ul>
+<li>推荐：</li>
+</ul>
+<div class="language-text ext-text line-numbers-mode"><pre v-pre class="shiki" style="background-color: var(--shiki-color-background)"><code><span class="line"><span style="color: var(--shiki-color-text)">fn()</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">复制代码</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)"></span></span></code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div></div></div><ul>
+<li>不推荐：</li>
+</ul>
+<div class="language-text ext-text line-numbers-mode"><pre v-pre class="shiki" style="background-color: var(--shiki-color-background)"><code><span class="line"><span style="color: var(--shiki-color-text)">fn ()</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)"></span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">fn</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">()</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">复制代码</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)"></span></span></code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><ol>
+<li>在操作符前后都需要添加空格。</li>
+</ol>
+<ul>
+<li>推荐：</li>
+</ul>
+<div class="language-text ext-text line-numbers-mode"><pre v-pre class="shiki" style="background-color: var(--shiki-color-background)"><code><span class="line"><span style="color: var(--shiki-color-text)">var sum = 1 + 2</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">复制代码</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)"></span></span></code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div></div></div><ul>
+<li>不推荐：</li>
+</ul>
+<div class="language-text ext-text line-numbers-mode"><pre v-pre class="shiki" style="background-color: var(--shiki-color-background)"><code><span class="line"><span style="color: var(--shiki-color-text)">var sum = 1+2</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">复制代码</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)"></span></span></code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="三、注释规范" tabindex="-1"><a class="header-anchor" href="#三、注释规范" aria-hidden="true">#</a> 三、注释规范</h2>
+<p><strong>注释的目的：</strong></p>
+<ul>
+<li><strong>提高代码的可读性，从而提高代码的可维护性</strong></li>
+</ul>
+<p><strong>注释的原则：</strong></p>
+<ul>
+<li><strong>如无必要，勿增注释 ( As short as possible )</strong></li>
+<li><strong>如有必要，尽量详尽 ( As long as necessary )</strong></li>
+</ul>
+<h3 id="_3-1-html-文件注释" tabindex="-1"><a class="header-anchor" href="#_3-1-html-文件注释" aria-hidden="true">#</a> 3.1 HTML 文件注释</h3>
+<h4 id="_3-1-1-单行注释" tabindex="-1"><a class="header-anchor" href="#_3-1-1-单行注释" aria-hidden="true">#</a> 3.1.1 单行注释</h4>
+<p><strong>一般用于简单的描述，如某些状态描述、属性描述等。</strong></p>
+<p>注释内容前后各一个空格字符，注释位于要注释代码的上面，单独占一行。</p>
+<ul>
+<li>推荐：</li>
+</ul>
+<div class="language-text ext-text line-numbers-mode"><pre v-pre class="shiki" style="background-color: var(--shiki-color-background)"><code><span class="line"><span style="color: var(--shiki-color-text)">&lt;!-- Comment Text --&gt;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">&lt;div&gt;...&lt;/div&gt;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">复制代码</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)"></span></span></code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><ul>
+<li>不推荐</li>
+</ul>
+<div class="language-text ext-text line-numbers-mode"><pre v-pre class="shiki" style="background-color: var(--shiki-color-background)"><code><span class="line"><span style="color: var(--shiki-color-text)">&lt;div&gt;...&lt;/div&gt;&lt;!-- Comment Text --&gt;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)"></span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">&lt;div&gt;&lt;!-- Comment Text --&gt;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">  ...</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">&lt;/div&gt;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">复制代码</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)"></span></span></code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h4 id="_3-1-2-模块注释" tabindex="-1"><a class="header-anchor" href="#_3-1-2-模块注释" aria-hidden="true">#</a> 3.1.2 模块注释</h4>
+<p><strong>一般用于描述模块的名称以及模块开始与结束的位置。</strong></p>
+<p>注释内容前后各一个空格字符， <code v-pre>&lt;!-- S Comment Text \--&gt;</code>表示模块开始， <code v-pre>&lt;!-- E Comment Text \--&gt;</code>表示模块结束，模块与模块之间相隔一行。</p>
+<ul>
+<li>推荐：</li>
+</ul>
+<div class="language-text ext-text line-numbers-mode"><pre v-pre class="shiki" style="background-color: var(--shiki-color-background)"><code><span class="line"><span style="color: var(--shiki-color-text)">&lt;!-- S Comment Text A --&gt;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">&lt;div class=&quot;mod_a&quot;&gt;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">  ...</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">&lt;/div&gt;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">&lt;!-- E Comment Text A --&gt;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)"></span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">&lt;!-- S Comment Text B --&gt;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">&lt;div class=&quot;mod_b&quot;&gt;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">  ...</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">&lt;/div&gt;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">&lt;!-- E Comment Text B --&gt;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">复制代码</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)"></span></span></code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><ul>
+<li>不推荐</li>
+</ul>
+<div class="language-text ext-text line-numbers-mode"><pre v-pre class="shiki" style="background-color: var(--shiki-color-background)"><code><span class="line"><span style="color: var(--shiki-color-text)">&lt;!-- S Comment Text A --&gt;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">&lt;div class=&quot;mod_a&quot;&gt;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">  ...</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">&lt;/div&gt;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">&lt;!-- E Comment Text A --&gt;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">&lt;!-- S Comment Text B --&gt;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">&lt;div class=&quot;mod_b&quot;&gt;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">  ...</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">&lt;/div&gt;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">&lt;!-- E Comment Text B --&gt;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">复制代码</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)"></span></span></code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h4 id="_3-1-3-嵌套模块注释" tabindex="-1"><a class="header-anchor" href="#_3-1-3-嵌套模块注释" aria-hidden="true">#</a> 3.1.3 嵌套模块注释</h4>
+<p>当模块注释内再出现模块注释的时候，为了突出主要模块，嵌套模块不再使用。</p>
+<div class="language-text ext-text line-numbers-mode"><pre v-pre class="shiki" style="background-color: var(--shiki-color-background)"><code><span class="line"><span style="color: var(--shiki-color-text)">&lt;!-- S Comment Text --&gt;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">&lt;!-- E Comment Text --&gt;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">复制代码</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)"></span></span></code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>而改用</p>
+<div class="language-text ext-text line-numbers-mode"><pre v-pre class="shiki" style="background-color: var(--shiki-color-background)"><code><span class="line"><span style="color: var(--shiki-color-text)">&lt;!-- /Comment Text --&gt;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">复制代码</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)"></span></span></code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div></div></div><p>注释写在模块结尾标签底部，单独一行。</p>
+<div class="language-text ext-text line-numbers-mode"><pre v-pre class="shiki" style="background-color: var(--shiki-color-background)"><code><span class="line"><span style="color: var(--shiki-color-text)">&lt;!-- S Comment Text A --&gt;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">&lt;div class=&quot;mod_a&quot;&gt;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)"></span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">    &lt;div class=&quot;mod_b&quot;&gt;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">        ...</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">    &lt;/div&gt;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">    &lt;!-- /mod_b --&gt;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)"></span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">    &lt;div class=&quot;mod_c&quot;&gt;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">     ...</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">    &lt;/div&gt;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">    &lt;!-- /mod_c --&gt;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)"></span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">&lt;/div&gt;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">&lt;!-- E Comment Text A --&gt;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">复制代码</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)"></span></span></code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="_3-2-css-文件注释" tabindex="-1"><a class="header-anchor" href="#_3-2-css-文件注释" aria-hidden="true">#</a> 3.2 CSS 文件注释</h3>
+<h4 id="_3-2-1-单行注释" tabindex="-1"><a class="header-anchor" href="#_3-2-1-单行注释" aria-hidden="true">#</a> 3.2.1 单行注释</h4>
+<p>注释内容第一个字符和最后一个字符都是一个空格字符，单独占一行，行与行之间相隔一行。</p>
+<ul>
+<li>推荐：</li>
+</ul>
+<div class="language-text ext-text line-numbers-mode"><pre v-pre class="shiki" style="background-color: var(--shiki-color-background)"><code><span class="line"><span style="color: var(--shiki-color-text)">/* Comment Text */</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">.jdc {}</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)"></span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">/* Comment Text */</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">.jdc {}</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">复制代码</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)"></span></span></code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><ul>
+<li>不推荐：</li>
+</ul>
+<div class="language-text ext-text line-numbers-mode"><pre v-pre class="shiki" style="background-color: var(--shiki-color-background)"><code><span class="line"><span style="color: var(--shiki-color-text)">/*Comment Text*/</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">.jdc {</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">  display: block;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">}</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)"></span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">.jdc {</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">  display: block;/*Comment Text*/</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">}</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">复制代码</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)"></span></span></code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h4 id="_3-2-2-模块注释" tabindex="-1"><a class="header-anchor" href="#_3-2-2-模块注释" aria-hidden="true">#</a> 3.2.2 模块注释</h4>
+<p>注释内容第一个字符和最后一个字符都是一个空格字符，<code v-pre>/*</code> 与 模块信息描述占一行，多个横线分隔符 <code v-pre>-</code> 与 <code v-pre>*/</code> 占一行，行与行之间相隔两行。</p>
+<ul>
+<li>推荐：</li>
+</ul>
+<div class="language-text ext-text line-numbers-mode"><pre v-pre class="shiki" style="background-color: var(--shiki-color-background)"><code><span class="line"><span style="color: var(--shiki-color-text)">/* Module A</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">---------------------------------------------------------------- */</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">.mod_a {}</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)"></span></span>
+<span class="line"><span style="color: var(--shiki-color-text)"></span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">/* Module B</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">---------------------------------------------------------------- */</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">.mod_b {}</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">复制代码</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)"></span></span></code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><ul>
+<li>不推荐：</li>
+</ul>
+<div class="language-text ext-text line-numbers-mode"><pre v-pre class="shiki" style="background-color: var(--shiki-color-background)"><code><span class="line"><span style="color: var(--shiki-color-text)">/* Module A ---------------------------------------------------- */</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">.mod_a {}</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">/* Module B ---------------------------------------------------- */</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">.mod_b {}</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">复制代码</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)"></span></span></code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h4 id="_3-2-3-文件注释" tabindex="-1"><a class="header-anchor" href="#_3-2-3-文件注释" aria-hidden="true">#</a> 3.2.3 文件注释</h4>
+<p>在样式文件编码声明 <code v-pre>@charset</code> 语句下面注明页面名称、作者、创建日期等信息。</p>
+<div class="language-text ext-text line-numbers-mode"><pre v-pre class="shiki" style="background-color: var(--shiki-color-background)"><code><span class="line"><span style="color: var(--shiki-color-text)">@charset &quot;UTF-8&quot;;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">/**</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)"> * @desc File Info</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)"> * @author Author Name</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)"> * @date 2015-10-10</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)"> */</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">复制代码</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)"></span></span></code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="_3-3-javascript-文件注释" tabindex="-1"><a class="header-anchor" href="#_3-3-javascript-文件注释" aria-hidden="true">#</a> 3.3 JavaScript 文件注释</h3>
+<h4 id="_3-3-1-单行注释" tabindex="-1"><a class="header-anchor" href="#_3-3-1-单行注释" aria-hidden="true">#</a> 3.3.1 单行注释</h4>
+<p>单行注释使用 <code v-pre>//</code>，注释应单独一行写在被注释对象的上方，不要追加在某条语句的后面。</p>
+<ul>
+<li>推荐：</li>
+</ul>
+<div class="language-text ext-text line-numbers-mode"><pre v-pre class="shiki" style="background-color: var(--shiki-color-background)"><code><span class="line"><span style="color: var(--shiki-color-text)">// is current tab</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">const active = true</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">复制代码</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)"></span></span></code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><ul>
+<li>不推荐：</li>
+</ul>
+<div class="language-text ext-text line-numbers-mode"><pre v-pre class="shiki" style="background-color: var(--shiki-color-background)"><code><span class="line"><span style="color: var(--shiki-color-text)">const active = true // is current tab</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">复制代码</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)"></span></span></code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div></div></div><p>注释行的上方需要有一个空行（<strong>除非注释行上方是一个块的顶部</strong>），以增加可读性。</p>
+<ul>
+<li>推荐：</li>
+</ul>
+<div class="language-text ext-text line-numbers-mode"><pre v-pre class="shiki" style="background-color: var(--shiki-color-background)"><code><span class="line"><span style="color: var(--shiki-color-text)">function getType () {</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">  console.log(&#39;fetching type...&#39;)</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)"></span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">  // set the default type to &#39;no type&#39;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">  const type = this.type || &#39;no type&#39;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">  return type</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">}</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">复制代码</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">// 注释行上面是一个块的顶部时不需要空行</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">function getType () {</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">  // set the default type to &#39;no type&#39;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">  const type = this.type || &#39;no type&#39;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">  return type</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">}</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">复制代码</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)"></span></span></code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><ul>
+<li>不推荐：</li>
+</ul>
+<div class="language-text ext-text line-numbers-mode"><pre v-pre class="shiki" style="background-color: var(--shiki-color-background)"><code><span class="line"><span style="color: var(--shiki-color-text)">function getType () {</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">  console.log(&#39;fetching type...&#39;)</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">  // set the default type to &#39;no type&#39;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">  const type = this.type || &#39;no type&#39;</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">  return type</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">}</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">复制代码</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)"></span></span></code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h4 id="_3-3-2-多行注释" tabindex="-1"><a class="header-anchor" href="#_3-3-2-多行注释" aria-hidden="true">#</a> 3.3.2 多行注释</h4>
+<p>多行注释使用 <code v-pre>/** ... */</code>，而不是多行的 <code v-pre>//</code>。</p>
+<ul>
+<li>推荐：</li>
+</ul>
+<div class="language-text ext-text line-numbers-mode"><pre v-pre class="shiki" style="background-color: var(--shiki-color-background)"><code><span class="line"><span style="color: var(--shiki-color-text)">/**</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)"> * make() returns a new element</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)"> * based on the passed-in tag name</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)"> */</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">function make (tag) {</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">  // ...</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)"></span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">  return element</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">}</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">复制代码</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)"></span></span></code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><ul>
+<li>不推荐：</li>
+</ul>
+<div class="language-text ext-text line-numbers-mode"><pre v-pre class="shiki" style="background-color: var(--shiki-color-background)"><code><span class="line"><span style="color: var(--shiki-color-text)">// make() returns a new element</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">// based on the passed in tag name</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">function make (tag) {</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">  // ...</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)"></span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">  return element</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">}</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">复制代码</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)"></span></span></code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h4 id="_3-3-3-注释空格" tabindex="-1"><a class="header-anchor" href="#_3-3-3-注释空格" aria-hidden="true">#</a> 3.3.3 注释空格</h4>
+<p>注释内容和注释符之间需要有一个空格，以增加可读性。eslint: <code v-pre>spaced-comment</code>。</p>
+<ul>
+<li>推荐：</li>
+</ul>
+<div class="language-text ext-text line-numbers-mode"><pre v-pre class="shiki" style="background-color: var(--shiki-color-background)"><code><span class="line"><span style="color: var(--shiki-color-text)">// is current tab</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">const active = true</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)"></span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">/**</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)"> * make() returns a new element</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)"> * based on the passed-in tag name</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)"> */</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">function make(tag) {</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">  // ...</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)"></span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">  return element</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">}</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">复制代码</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)"></span></span></code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><ul>
+<li>不推荐：</li>
+</ul>
+<div class="language-text ext-text line-numbers-mode"><pre v-pre class="shiki" style="background-color: var(--shiki-color-background)"><code><span class="line"><span style="color: var(--shiki-color-text)">//is current tab</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">const active = true</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)"></span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">/**</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)"> *make() returns a new element</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)"> *based on the passed-in tag name</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)"> */</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">function make(tag) {</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">  // ...</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)"></span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">  return element</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">}</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">复制代码</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)"></span></span></code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h4 id="_3-3-4-特殊标记" tabindex="-1"><a class="header-anchor" href="#_3-3-4-特殊标记" aria-hidden="true">#</a> 3.3.4 特殊标记</h4>
+<p>有时我们发现某个可能的 bug，但因为一些原因还没法修复；或者某个地方还有一些待完成的功能，这时我们需要使用相应的特殊标记注释来告知未来的自己或合作者。常用的特殊标记有两种：</p>
+<ul>
+<li>
+<p><code v-pre>// FIXME</code> : 说明问题是什么</p>
+</li>
+<li>
+<ul>
+<li><code v-pre>// TODO</code> : 说明还要做什么或者问题的解决方案</li>
+</ul>
+</li>
+</ul>
+<div class="language-text ext-text line-numbers-mode"><pre v-pre class="shiki" style="background-color: var(--shiki-color-background)"><code><span class="line"><span style="color: var(--shiki-color-text)">class Calculator extends Abacus {</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">  constructor () {</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">    super ()</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)"></span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">      // FIXME: shouldn’t use a global here</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">      total = 0</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)"></span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">      // TODO: total should be configurable by an options param</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">      this.total = 0</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">  }</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">}</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">复制代码</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)"></span></span></code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h4 id="_3-3-5-文档类注释" tabindex="-1"><a class="header-anchor" href="#_3-3-5-文档类注释" aria-hidden="true">#</a> 3.3.5 文档类注释</h4>
+<p>文档类注释，如函数、类、文件、事件等；都使用 jsdoc 规范。</p>
+<div class="language-text ext-text line-numbers-mode"><pre v-pre class="shiki" style="background-color: var(--shiki-color-background)"><code><span class="line"><span style="color: var(--shiki-color-text)">/**</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)"> * Book类，代表一个书本.</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)"> * @constructor</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)"> * @param {string} title - 书本的标题.</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)"> * @param {string} author - 书本的作者.</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)"> */</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">function Book (title, author) {</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">  this.title = title</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">  this.author = author</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">}</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)"></span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">Book.prototype = {</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">  /**</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">   * 获取书本的标题</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">   * @returns {string|*}</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">   */</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">  getTitle: function () {</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">    return this.title</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">  },</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">  /**</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">   * 设置书本的页数</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">   * @param pageNum {number} 页数</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">   */</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">  setPageNum: function (pageNum) {</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">    this.pageNum=pageNum</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">  }</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">}</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)">复制代码</span></span>
+<span class="line"><span style="color: var(--shiki-color-text)"></span></span></code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h4 id="_3-3-6-注释工具" tabindex="-1"><a class="header-anchor" href="#_3-3-6-注释工具" aria-hidden="true">#</a> 3.3.6 注释工具</h4>
+<p><code v-pre>ESLint</code> 是当下最流行的 JS 代码检查工具，<code v-pre>ESLint</code> 中有一些注释相关的规则，用户可选择开启：</p>
+<ul>
+<li><code v-pre>valid-jsdoc</code></li>
+<li><code v-pre>require-jsdoc</code></li>
+<li><code v-pre>no-warning-comments</code></li>
+<li><code v-pre>capitalized-comments</code></li>
+<li><code v-pre>line-comment-position</code></li>
+<li><code v-pre>lines-around-comment</code></li>
+<li><code v-pre>multiline-comment-style</code></li>
+<li><code v-pre>no-inline-comments</code></li>
+<li><code v-pre>spaced-comment</code></li>
+</ul>
+<h2 id="四、其它" tabindex="-1"><a class="header-anchor" href="#四、其它" aria-hidden="true">#</a> 四、其它</h2>
+<ul>
+<li>缩进换行请使用两个空格。</li>
+<li>大型团队多人协作项目推荐 JavaScript 代码末尾加分号。</li>
+<li>小型个人创新练手项目可尝试使用 JavaScript 代码末尾不加分号的风格，更加清爽简练。</li>
+</ul>
+</div></template>
