@@ -51,3 +51,10 @@
 .demo-block {
 	background-color: #f1f3f4;
 }
+
+// 标题文字背景色渐变
+#main-title {
+	background: linear-gradient(90deg, #d3a43f, #d30707);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+}

@@ -3,7 +3,7 @@ home: true
 title: 🏠 主页
 heroImage: /logo.svg
 heroText: Kiyan-a
-tagline: 记录成长,相信过程...
+tagline: 开着邻居家的 toyota 追着日落
 actions:
     - text: 使用指南
       link: /docs/about

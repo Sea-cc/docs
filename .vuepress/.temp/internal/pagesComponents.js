@@ -19,10 +19,16 @@ export const pagesComponents = {
   "v-a5369728": defineAsyncComponent(() => import(/* webpackChunkName: "v-a5369728" */"D:/Material/项目源码/docs/.vuepress/.temp/pages/docs/disable.html.vue")),
   // path: /docs/ES6.html
   "v-365d88e8": defineAsyncComponent(() => import(/* webpackChunkName: "v-365d88e8" */"D:/Material/项目源码/docs/.vuepress/.temp/pages/docs/ES6.html.vue")),
+  // path: /docs/for%20Js.html
+  "v-262a9c0a": defineAsyncComponent(() => import(/* webpackChunkName: "v-262a9c0a" */"D:/Material/项目源码/docs/.vuepress/.temp/pages/docs/for Js.html.vue")),
   // path: /docs/markdown.html
   "v-c6d4a9a2": defineAsyncComponent(() => import(/* webpackChunkName: "v-c6d4a9a2" */"D:/Material/项目源码/docs/.vuepress/.temp/pages/docs/markdown.html.vue")),
+  // path: /docs/mate.html
+  "v-8e838d4e": defineAsyncComponent(() => import(/* webpackChunkName: "v-8e838d4e" */"D:/Material/项目源码/docs/.vuepress/.temp/pages/docs/mate.html.vue")),
   // path: /docs/uni-app.html
   "v-233f75e0": defineAsyncComponent(() => import(/* webpackChunkName: "v-233f75e0" */"D:/Material/项目源码/docs/.vuepress/.temp/pages/docs/uni-app.html.vue")),
+  // path: /docs/vite.html
+  "v-2e2f875a": defineAsyncComponent(() => import(/* webpackChunkName: "v-2e2f875a" */"D:/Material/项目源码/docs/.vuepress/.temp/pages/docs/vite.html.vue")),
   // path: /docs/vue3.html
   "v-c4244c1e": defineAsyncComponent(() => import(/* webpackChunkName: "v-c4244c1e" */"D:/Material/项目源码/docs/.vuepress/.temp/pages/docs/vue3.html.vue")),
   // path: /docs/%E5%BC%80%E5%8F%91%E8%A7%84%E8%8C%83.html
