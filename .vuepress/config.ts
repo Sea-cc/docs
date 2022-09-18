@@ -6,7 +6,7 @@ export default defineUserConfig({
 	title: 'K',
 	head: [['link', { rel: 'icon', type: 'svg', href: '/logo.svg' }]],
 	description: '记录成长,相信过程...',
-	base: '/',
+	base: '/docs/',
 	theme,
 	plugins: [[vuepressPluginDemoblockPlus]],
 });
