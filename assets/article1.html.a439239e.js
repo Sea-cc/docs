@@ -1,1 +1,0 @@
-import{_ as c,r as e,o as n,c as r,b as t,w as s}from"./app.30755dc9.js";const _={};function l(m,d){const o=e("dataPage"),a=e("demo");return n(),r("div",null,[t(a,{customClass:"",sourceCode:""},{default:s(()=>[t(o)]),_:1})])}var i=c(_,[["render",l],["__file","article1.html.vue"]]);export{i as default};
