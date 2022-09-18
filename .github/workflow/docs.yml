@@ -1,10 +1,10 @@
 # action 的名称
 name: docs
 
-# 触发条件：在 push 到 main 分支后
-on:
-    push:
-    branches: [master]
+on: # 触发条件
+    push: # 有推送动作时触发
+        branchesjkj:
+            - master # 这里的意思是当 main分支发生push的时候，运行下面的jobs
 
 # 任务
 jobs:
