@@ -7,7 +7,7 @@ category:
 
 @slidestart
 
-# 使用 --- 分割幻灯片
+# 使用 -- 分割幻灯片
 
 ---
 
