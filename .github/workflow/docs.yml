@@ -1,11 +1,10 @@
-# action 的名称
 name: docs
 
 # 触发条件
 on:
     [push]
 
-    #branches: ['master']
+    branches: ['master']
 
 # 任务
 jobs:
