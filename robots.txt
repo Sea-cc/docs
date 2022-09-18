@@ -2,4 +2,4 @@
 User-agent:*
 Disallow:
 
-Sitemap: https://kiyan-a.github.io/sev/docs/sitemap.xml
+Sitemap: https://kiyan-a.github.io/sev/sitemap.xml
