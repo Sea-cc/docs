@@ -2,7 +2,9 @@ name: docs
 
 # 触发条件
 on:
-    branches: [master]
+    push:
+        branches:
+            - master
 
 # 任务
 jobs:
