@@ -3,7 +3,7 @@ name: docs
 
 on: # 触发条件
     push: # 有推送动作时触发
-        branchesjkj:
+        branches:
             - master # 这里的意思是当 main分支发生push的时候，运行下面的jobs
 
 # 任务
