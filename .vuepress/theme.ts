@@ -10,7 +10,7 @@ export default hopeTheme({
 		red_: '#dd1370',
 		yellow: '#e3eca8',
 		orange: '#fb9b5f',
-		orange_: '#ff897d',
+		orange_: '#ff896d',
 	} /* 主题色 */,
 	toc: true /* 根据需要可在页面配置 */,
 	fullscreen: true /* 全屏 */,
