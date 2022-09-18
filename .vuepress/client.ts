@@ -1,7 +1,7 @@
 import * as Icons from '@element-plus/icons-vue';
 import ElementPlus from 'element-plus';
 import 'element-plus/theme-chalk/index.css';
-import './public/iconfont';
+import './public/iconfont.js';
 import { defineClientConfig } from '@vuepress/client';
 import vSvg from './components/vSvg.vue';
 import dataPage from './components/table/dataPage.vue';
