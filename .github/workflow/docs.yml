@@ -4,8 +4,7 @@ name: DOCS
 # 触发条件：在 push 到 main 分支后
 on:
     push:
-        branches:
-            - master
+    branches: [master]
 
 # 任务
 jobs:
