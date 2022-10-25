@@ -3,7 +3,7 @@ home: true
 title: 🏠 主页
 heroImage: /logo.svg
 heroText: Kiyan-a
-tagline: 开着邻居家的 toyota 追着日落
+tagline: 学不动了😭
 actions:
     - text: 使用指南
       link: /docs/about

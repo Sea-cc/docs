@@ -13,6 +13,8 @@ export const pagesComponents = {
   "v-3b1675a7": defineAsyncComponent(() => import(/* webpackChunkName: "v-3b1675a7" */"D:/Material/项目源码/docs/.vuepress/.temp/pages/docs/about.html.vue")),
   // path: /docs/accuracyProblem.html
   "v-32ee03ae": defineAsyncComponent(() => import(/* webpackChunkName: "v-32ee03ae" */"D:/Material/项目源码/docs/.vuepress/.temp/pages/docs/accuracyProblem.html.vue")),
+  // path: /docs/Axios%E5%B0%81%E8%A3%85.html
+  "v-54532dbb": defineAsyncComponent(() => import(/* webpackChunkName: "v-54532dbb" */"D:/Material/项目源码/docs/.vuepress/.temp/pages/docs/Axios封装.html.vue")),
   // path: /docs/dev.html
   "v-c3080642": defineAsyncComponent(() => import(/* webpackChunkName: "v-c3080642" */"D:/Material/项目源码/docs/.vuepress/.temp/pages/docs/dev.html.vue")),
   // path: /docs/disable.html
@@ -25,12 +27,18 @@ export const pagesComponents = {
   "v-c6d4a9a2": defineAsyncComponent(() => import(/* webpackChunkName: "v-c6d4a9a2" */"D:/Material/项目源码/docs/.vuepress/.temp/pages/docs/markdown.html.vue")),
   // path: /docs/mate.html
   "v-8e838d4e": defineAsyncComponent(() => import(/* webpackChunkName: "v-8e838d4e" */"D:/Material/项目源码/docs/.vuepress/.temp/pages/docs/mate.html.vue")),
+  // path: /docs/nest.html
+  "v-5d8c5c34": defineAsyncComponent(() => import(/* webpackChunkName: "v-5d8c5c34" */"D:/Material/项目源码/docs/.vuepress/.temp/pages/docs/nest.html.vue")),
+  // path: /docs/new%20Linux.html
+  "v-004dd043": defineAsyncComponent(() => import(/* webpackChunkName: "v-004dd043" */"D:/Material/项目源码/docs/.vuepress/.temp/pages/docs/new Linux.html.vue")),
   // path: /docs/uni-app.html
   "v-233f75e0": defineAsyncComponent(() => import(/* webpackChunkName: "v-233f75e0" */"D:/Material/项目源码/docs/.vuepress/.temp/pages/docs/uni-app.html.vue")),
   // path: /docs/vite.html
   "v-2e2f875a": defineAsyncComponent(() => import(/* webpackChunkName: "v-2e2f875a" */"D:/Material/项目源码/docs/.vuepress/.temp/pages/docs/vite.html.vue")),
   // path: /docs/vue3.html
   "v-c4244c1e": defineAsyncComponent(() => import(/* webpackChunkName: "v-c4244c1e" */"D:/Material/项目源码/docs/.vuepress/.temp/pages/docs/vue3.html.vue")),
+  // path: /docs/webpack.html
+  "v-2966ff07": defineAsyncComponent(() => import(/* webpackChunkName: "v-2966ff07" */"D:/Material/项目源码/docs/.vuepress/.temp/pages/docs/webpack.html.vue")),
   // path: /docs/%E5%BC%80%E5%8F%91%E8%A7%84%E8%8C%83.html
   "v-155d207e": defineAsyncComponent(() => import(/* webpackChunkName: "v-155d207e" */"D:/Material/项目源码/docs/.vuepress/.temp/pages/docs/开发规范.html.vue")),
   // path: /docs/%E6%96%87%E4%BB%B6%E8%B5%84%E6%BA%90%E5%A4%84%E7%90%86.html

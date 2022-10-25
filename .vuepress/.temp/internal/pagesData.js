@@ -11,6 +11,8 @@ export const pagesData = {
   "v-3b1675a7": () => import(/* webpackChunkName: "v-3b1675a7" */"D:/Material/项目源码/docs/.vuepress/.temp/pages/docs/about.html.js").then(({ data }) => data),
   // path: /docs/accuracyProblem.html
   "v-32ee03ae": () => import(/* webpackChunkName: "v-32ee03ae" */"D:/Material/项目源码/docs/.vuepress/.temp/pages/docs/accuracyProblem.html.js").then(({ data }) => data),
+  // path: /docs/Axios%E5%B0%81%E8%A3%85.html
+  "v-54532dbb": () => import(/* webpackChunkName: "v-54532dbb" */"D:/Material/项目源码/docs/.vuepress/.temp/pages/docs/Axios封装.html.js").then(({ data }) => data),
   // path: /docs/dev.html
   "v-c3080642": () => import(/* webpackChunkName: "v-c3080642" */"D:/Material/项目源码/docs/.vuepress/.temp/pages/docs/dev.html.js").then(({ data }) => data),
   // path: /docs/disable.html
@@ -23,12 +25,18 @@ export const pagesData = {
   "v-c6d4a9a2": () => import(/* webpackChunkName: "v-c6d4a9a2" */"D:/Material/项目源码/docs/.vuepress/.temp/pages/docs/markdown.html.js").then(({ data }) => data),
   // path: /docs/mate.html
   "v-8e838d4e": () => import(/* webpackChunkName: "v-8e838d4e" */"D:/Material/项目源码/docs/.vuepress/.temp/pages/docs/mate.html.js").then(({ data }) => data),
+  // path: /docs/nest.html
+  "v-5d8c5c34": () => import(/* webpackChunkName: "v-5d8c5c34" */"D:/Material/项目源码/docs/.vuepress/.temp/pages/docs/nest.html.js").then(({ data }) => data),
+  // path: /docs/new%20Linux.html
+  "v-004dd043": () => import(/* webpackChunkName: "v-004dd043" */"D:/Material/项目源码/docs/.vuepress/.temp/pages/docs/new Linux.html.js").then(({ data }) => data),
   // path: /docs/uni-app.html
   "v-233f75e0": () => import(/* webpackChunkName: "v-233f75e0" */"D:/Material/项目源码/docs/.vuepress/.temp/pages/docs/uni-app.html.js").then(({ data }) => data),
   // path: /docs/vite.html
   "v-2e2f875a": () => import(/* webpackChunkName: "v-2e2f875a" */"D:/Material/项目源码/docs/.vuepress/.temp/pages/docs/vite.html.js").then(({ data }) => data),
   // path: /docs/vue3.html
   "v-c4244c1e": () => import(/* webpackChunkName: "v-c4244c1e" */"D:/Material/项目源码/docs/.vuepress/.temp/pages/docs/vue3.html.js").then(({ data }) => data),
+  // path: /docs/webpack.html
+  "v-2966ff07": () => import(/* webpackChunkName: "v-2966ff07" */"D:/Material/项目源码/docs/.vuepress/.temp/pages/docs/webpack.html.js").then(({ data }) => data),
   // path: /docs/%E5%BC%80%E5%8F%91%E8%A7%84%E8%8C%83.html
   "v-155d207e": () => import(/* webpackChunkName: "v-155d207e" */"D:/Material/项目源码/docs/.vuepress/.temp/pages/docs/开发规范.html.js").then(({ data }) => data),
   // path: /docs/%E6%96%87%E4%BB%B6%E8%B5%84%E6%BA%90%E5%A4%84%E7%90%86.html
